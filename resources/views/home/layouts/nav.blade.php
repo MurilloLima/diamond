@@ -1,48 +1,213 @@
- <!-- Sidebar Start -->
- <div class="sidebar pe-4 pb-3">
-     <nav class="navbar bg-secondary navbar-dark">
-         <a href="index.html" class="navbar-brand mx-4 mb-3">
-             <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>DarkPan</h3>
-         </a>
-         <div class="d-flex align-items-center ms-4 mb-4">
-             <div class="position-relative">
-                 <img class="rounded-circle" src="{{ asset('home/img/user.jpg') }}" alt="" style="width: 40px; height: 40px;">
-                 <div
-                     class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1">
-                 </div>
-             </div>
-             <div class="ms-3">
-                 <h6 class="mb-0">Jhon Doe</h6>
-                 <span>Admin</span>
-             </div>
-         </div>
-         <div class="navbar-nav w-100">
-             <a href="index.html" class="nav-item nav-link active"><i
-                     class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-             <div class="nav-item dropdown">
-                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
-                         class="fa fa-laptop me-2"></i>Elements</a>
-                 <div class="dropdown-menu bg-transparent border-0">
-                     <a href="button.html" class="dropdown-item">Buttons</a>
-                     <a href="typography.html" class="dropdown-item">Typography</a>
-                     <a href="element.html" class="dropdown-item">Other Elements</a>
-                 </div>
-             </div>
-             <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
-             <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
-             <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
-             <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>
-             <div class="nav-item dropdown">
-                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
-                         class="far fa-file-alt me-2"></i>Pages</a>
-                 <div class="dropdown-menu bg-transparent border-0">
-                     <a href="signin.html" class="dropdown-item">Sign In</a>
-                     <a href="signup.html" class="dropdown-item">Sign Up</a>
-                     <a href="404.html" class="dropdown-item">404 Error</a>
-                     <a href="blank.html" class="dropdown-item">Blank Page</a>
-                 </div>
-             </div>
-         </div>
-     </nav>
- </div>
- <!-- Sidebar End -->
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+    <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
+        <a class="sidebar-brand brand-logo" href="index.html">
+            {{-- <img src="{{ asset('home/assets/images/logo.svg') }}" alt="logo"></a> --}}
+            <a class="sidebar-brand brand-logo-mini" href="index.html">
+                {{-- <img src="{{ asset('home/assets/images/logo-mini.svg') }}"
+                alt="logo"></a> --}}
+    </div>
+    <ul class="nav">
+        <li class="nav-item profile">
+            <div class="profile-desc">
+                <div class="profile-pic">
+                    <div class="count-indicator">
+                        <img class="img-xs rounded-circle " src="{{ asset('home/assets/images/faces/face15.jpg') }}"
+                            alt="">
+                        <span class="count bg-success"></span>
+                    </div>
+                    <div class="profile-name">
+                        <h5 class="mb-0 font-weight-normal">Marcio Kein</h5>
+                        <span>Membro de Imperatriz-MA</span>
+                    </div>
+                </div>
+                <a href="#" id="profile-dropdown" data-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
+                <div class="dropdown-menu dropdown-menu-right sidebar-dropdown preview-list"
+                    aria-labelledby="profile-dropdown">
+                    <a href="#" class="dropdown-item preview-item">
+                        <div class="preview-thumbnail">
+                            <div class="preview-icon bg-dark rounded-circle">
+                                <i class="mdi mdi-settings text-primary"></i>
+                            </div>
+                        </div>
+                        <div class="preview-item-content">
+                            <p class="preview-subject ellipsis mb-1 text-small">Regras e garantias</p>
+                        </div>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item preview-item">
+                        <div class="preview-thumbnail">
+                            <div class="preview-icon bg-dark rounded-circle">
+                                <i class="mdi mdi-onepassword  text-info"></i>
+                            </div>
+                        </div>
+                        <div class="preview-item-content">
+                            <p class="preview-subject ellipsis mb-1 text-small">Change Password</p>
+                        </div>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item preview-item">
+                        <div class="preview-thumbnail">
+                            <div class="preview-icon bg-dark rounded-circle">
+                                <i class="mdi mdi-calendar-today text-success"></i>
+                            </div>
+                        </div>
+                        <div class="preview-item-content">
+                            <p class="preview-subject ellipsis mb-1 text-small">To-do list</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </li>
+        <li class="nav-item nav-category">
+            <span class="nav-link">Menu</span>
+        </li>
+        <li class="nav-item menu-items active">
+            <a class="nav-link" href="index.html">
+                <span class="menu-icon">
+                    <i class="mdi mdi-speedometer"></i>
+                </span>
+                <span class="menu-title">Home</span>
+            </a>
+        </li>
+        <li class="nav-item menu-items">
+            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                <span class="menu-icon">
+                    <i class="mdi mdi-laptop"></i>
+                </span>
+                <span class="menu-title">Regras e garantias</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-basic">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/ui-features/buttons.html">
+                            Dicas e Guias
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/ui-features/dropdowns.html">
+                            Configurações de mercado
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/ui-features/typography.html">
+                            Atualização de status
+
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="nav-item menu-items">
+            <a class="nav-link" href="pages/forms/basic_elements.html">
+                <span class="menu-icon">
+                    <i class="mdi mdi-playlist-play"></i>
+                </span>
+                <span class="menu-title">
+                    Taxas de câmbio
+
+                </span>
+            </a>
+        </li>
+        <li class="nav-item menu-items">
+            <a class="nav-link" href="pages/tables/basic-table.html">
+                <span class="menu-icon">
+                    <i class="mdi mdi-table-large"></i>
+                </span>
+                <span class="menu-title">
+                    Mudanças no site
+
+                </span>
+            </a>
+        </li>
+        <li class="nav-item menu-items">
+            <a class="nav-link" href="pages/charts/chartjs.html">
+                <span class="menu-icon">
+                    <i class="mdi mdi-chart-bar"></i>
+                </span>
+                <span class="menu-title">
+                    Reportar um bug
+
+                </span>
+            </a>
+        </li>
+        <li class="nav-item menu-items">
+            <a class="nav-link" href="pages/icons/mdi.html">
+                <span class="menu-icon">
+                    <i class="mdi mdi-contacts"></i>
+                </span>
+                <span class="menu-title">
+                    Sugira uma ideia
+
+                </span>
+            </a>
+        </li>
+        {{-- <li class="nav-item menu-items">
+            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+                <span class="menu-icon">
+                    <i class="mdi mdi-security"></i>
+                </span>
+                <span class="menu-title">User Pages</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="auth">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" href=""> Blank Page
+                        </a></li>
+                    <li class="nav-item"> <a class="nav-link" href=""> 404 </a></li>
+                    <li class="nav-item"> <a class="nav-link" href=""> 500 </a></li>
+                    <li class="nav-item"> <a class="nav-link" href=""> Login </a></li>
+                    <li class="nav-item"> <a class="nav-link" href=""> Cadastrar-se </a>
+                    </li>
+                </ul>
+            </div>
+        </li> --}}
+        <li class="nav-item menu-items">
+            <a class="nav-link"
+                href="">
+                <span class="menu-icon">
+                    <i class="mdi mdi-file-document-box"></i>
+                </span>
+                <span class="menu-title">
+                    APIs desenvolvedor
+
+                </span>
+            </a>
+        </li>
+        <li class="nav-item menu-items">
+            <a class="nav-link"
+                href="">
+                <span class="menu-icon">
+                    <i class="mdi mdi-file-document-box"></i>
+                </span>
+                <span class="menu-title">
+                    Preço do inventário
+                </span>
+            </a>
+        </li>
+        <li class="nav-item menu-items">
+            <a class="nav-link"
+                href="">
+                <span class="menu-icon">
+                    <i class="mdi mdi-file-document-box"></i>
+                </span>
+                <span class="menu-title">
+                    Recarregue seu saldo
+                </span>
+            </a>
+        </li>
+        <li class="nav-item menu-items">
+            <a class="nav-link"
+                href="">
+                <span class="menu-icon">
+                    <i class="mdi mdi-file-document-box"></i>
+                </span>
+                <span class="menu-title">
+                    Descubri e-mail
+                </span>
+            </a>
+        </li>
+
+
+    </ul>
+</nav>
