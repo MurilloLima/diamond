@@ -199,7 +199,7 @@
                         <p class="p-3 mb-0 text-center">Advanced settings</p>
                     </div>
                 @else
-                    <a href="" style="color: #FFF; text-decoration:none;">Entrar</a>
+                    <a href="{{ route('login') }}" style="color: #FFF; text-decoration:none;">Entrar</a>
                 @endif
 
             </li>
