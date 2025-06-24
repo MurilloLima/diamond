@@ -145,8 +145,8 @@
                                 <a class="dropdown-item preview-item">
                                     <div class="preview-thumbnail">
                                         <div class="preview-icon bg-dark rounded-circle">
-                                             <img src="{{ asset('home/assets/images/icon/discord.png') }}" alt="image"
-                                            class="rounded-circle profile-pic">
+                                            <img src="{{ asset('home/assets/images/icon/discord.png') }}" alt="image"
+                                                class="rounded-circle profile-pic">
                                         </div>
                                     </div>
                                     <div class="preview-item-content">
@@ -228,31 +228,80 @@
                 <div class="content-wrapper">
                     <div class="row">
                         <div class="col-12 grid-margin stretch-card">
-                            <div class="card corona-gradient-card">
+                            <div class="card corona-gradient-card" style="margin-top: 50px">
                                 <div class="card-body py-0 px-0 px-sm-3">
                                     <div class="row align-items-center">
                                         <div class="col-5 col-sm-7 col-xl-12 p-3">
+                                            <table class="table">
+
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="" style="padding: 10px">
+                                                                <img src="{{ asset('home/assets/images/icon/riot.png') }}"
+                                                                    width="30" alt="">
+                                                            </a>
+                                                        </td>
+                                                        <td>
+                                                            <a href="" style="padding: 10px">
+                                                                <img src="{{ asset('home/assets/images/icon/Telegram_logo.svg.webp') }}"
+                                                                    width="30" alt="">
+                                                            </a>
+                                                        </td>
+                                                        <td>
+                                                            <a href="" style="font-weight: bold; color: #191C24">
+                                                                <img src="{{ asset('home/assets/images/icon/steam_icon.png') }}"
+                                                                    width="30" alt="">
+                                                            </a>
+                                                        </td>
+                                                        <td>
+                                                            <a href=""
+                                                                style="padding: 10px; font-weight: bold; color: #191C24">
+                                                                <img src="{{ asset('home/assets/images/icon/fortnite.png') }}"
+                                                                    width="30" alt="">
+                                                            </a>
+                                                        </td>
+                                                        <td>
+                                                            <a href="" style="padding: 10px">
+                                                                <img src="{{ asset('home/assets/images/icon/Minecraft_Bedrock_2023.webp') }}"
+                                                                    width="30" alt="">
+                                                            </a>
+                                                        </td>
+
+
+                                                    </tr>
+                                                    <tr>
+
+                                                        <td>53275532</td>
+                                                        <td>15 May 2017</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>John</td>
+                                                        <td>53275533</td>
+                                                        <td>14 May 2017</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Peter</td>
+                                                        <td>53275534</td>
+                                                        <td>16 May 2017</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Dave</td>
+                                                        <td>53275535</td>
+                                                        <td>20 May 2017</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+
+
+
                                             {{-- <h4 class="mb-1 mb-sm-0">Want even more features?</h4> --}}
-                                            <a href="" style="font-weight: bold; color: #191C24">
-                                                <img src="{{ asset('home/assets/images/icon/steam_icon.png') }}"
-                                                    width="30" alt="">
-                                            </a>
-                                            <a href="" style="padding: 10px; font-weight: bold; color: #191C24">
-                                                <img src="{{ asset('home/assets/images/icon/fortnite.png') }}"
-                                                    width="30" alt="">
-                                            </a>
-                                            <a href="" style="padding: 10px">
-                                                <img src="{{ asset('home/assets/images/icon/Minecraft_Bedrock_2023.webp') }}"
-                                                    width="30" alt="">
-                                            </a>
-                                            <a href="" style="padding: 10px">
-                                                <img src="{{ asset('home/assets/images/icon/riot.png') }}" width="30"
-                                                    alt="">
-                                            </a>
-                                            <a href="" style="padding: 10px">
-                                                <img src="{{ asset('home/assets/images/icon/Telegram_logo.svg.webp') }}"
-                                                    width="30" alt="">
-                                            </a>
+
+
+
+
+
                                             <a href="" style="padding: 10px">
                                                 <img src="{{ asset('home/assets/images/icon/discord.png') }}"
                                                     width="30" alt="">
