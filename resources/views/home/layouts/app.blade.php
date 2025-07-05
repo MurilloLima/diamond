@@ -2,50 +2,47 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>Nama site</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
-    <link rel="stylesheet" href="{{ asset('home/assets/vendors/mdi/css/materialdesignicons.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('home/assets/vendors/css/vendor.bundle.base.css') }}">
-    <!-- endinject -->
-    <!-- Plugin css for this page -->
-    <link rel="stylesheet" href="{{ asset('home/assets/vendors/jvectormap/jquery-jvectormap.css') }}">
-    <link rel="stylesheet" href="{{ asset('home/assets/vendors/flag-icon-css/css/flag-icon.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('home/assets/vendors/owl-carousel-2/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('home/assets/vendors/owl-carousel-2/owl.theme.default.min.css') }}">
-    <!-- End plugin css for this page -->
-    <!-- inject:css -->
-    <!-- endinject -->
-    <!-- Layout styles -->
-    <link rel="stylesheet" href="{{ asset('home/assets/css/style.css') }}">
-    <!-- End layout styles -->
-    <link rel="shortcut icon" href="{{ asset('home/assets/images/favicon.png') }}" />
+    <meta charset="UTF-8">
+    <meta name="description" content="Anime Template">
+    <meta name="keywords" content="Anime, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Name</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{{ asset('home/css/bootstrap.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('home/css/font-awesome.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('home/css/elegant-icons.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('home/css/plyr.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('home/css/nice-select.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('home/css/owl.carousel.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('home/css/slicknav.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('home/css/style.css') }}" type="text/css">
 </head>
 
+
 <body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+    @include('home.layouts.nav')
     @yield('content')
-     <!-- plugins:js -->
-     <script src="{{ asset('home/assets/vendors/js/vendor.bundle.base.js') }}"></script>
-     <!-- endinject -->
-     <!-- Plugin js for this page -->
-     <script src="{{ asset('home/assets/vendors/chart.js/Chart.min.js') }}"></script>
-     <script src="{{ asset('home/assets/vendors/progressbar.js/progressbar.min.js') }}"></script>
-     <script src="{{ asset('home/assets/vendors/jvectormap/jquery-jvectormap.min.js') }}"></script>
-     <script src="{{ asset('home/assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js') }}"></script>
-     <script src="{{ asset('home/assets/vendors/owl-carousel-2/owl.carousel.min.js') }}"></script>
-     <!-- End plugin js for this page -->
-     <!-- inject:js -->
-     <script src="{{ asset('home/assets/js/off-canvas.js') }}"></script>
-     <script src="{{ asset('home/assets/js/hoverable-collapse.js') }}"></script>
-     <script src="{{ asset('home/assets/js/misc.js') }}"></script>
-     <script src="{{ asset('home/assets/js/settings.js') }}"></script>
-     <script src="{{ asset('home/assets/js/todolist.js') }}"></script>
-     <!-- endinject -->
-     <!-- Custom js for this page -->
-     <script src="{{ asset('home/assets/js/dashboard.js') }}"></script>
-     <!-- End custom js for this page -->
+    @include('home.layouts.footer')
+    <!-- Js Plugins -->
+    <script src="{{ asset('home/js/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ asset('home/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('home/js/player.js') }}"></script>
+    <script src="{{ asset('home/js/jquery.nice-select.min.js') }}"></script>
+    <script src="{{ asset('home/js/mixitup.min.js') }}"></script>
+    <script src="{{ asset('home/js/jquery.slicknav.js') }}"></script>
+    <script src="{{ asset('home/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('home/js/main.js') }}"></script>
 </body>
 
 </html>
