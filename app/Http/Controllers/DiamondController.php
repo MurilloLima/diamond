@@ -17,7 +17,8 @@ class DiamondController extends Controller
      */
     public function index()
     {
-        return view('admin.pages.diamond.index');
+        $data = Diamond::latest()->get();
+        return view('admin.pages.diamond.index', compact('data'));
     }
 
     /**

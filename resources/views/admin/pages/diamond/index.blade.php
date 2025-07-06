@@ -143,8 +143,7 @@
                                                 <div class="u-text">
                                                     <h4>{{ auth()->user()->name }}</h4>
                                                     <p class="text-muted">{{ auth()->user()->email }}</p>
-                                                    <a href="{{ route('logout') }}"
-                                                        class="btn btn-xs btn-secondary btn-sm">
+                                                    <a href="#" class="btn btn-xs btn-secondary btn-sm">
                                                         Perfil</a>
                                                 </div>
                                             </div>
@@ -171,7 +170,8 @@
                         </div>
                         <div class="ms-md-auto py-2 py-md-0">
                             {{-- <a href="#" class="btn btn-label-info btn-round me-2">Manage</a> --}}
-                            <a href="{{ route('admin.pages.diamond.create') }}" class="btn btn-primary btn-round">Add novo</a>
+                            <a href="{{ route('admin.pages.diamond.create') }}" class="btn btn-primary btn-round">Add
+                                novo</a>
                         </div>
                     </div>
 
@@ -204,17 +204,19 @@
                                             <div class="table-responsive table-hover table-sales">
                                                 <table class="table">
                                                     <tbody>
-                                                        <tr>
-                                                            <td>
-                                                                <div class="flag">
-                                                                    <img src="{{ asset('admin/assets/img/flags/id.png') }}"
-                                                                        alt="indonesia" />
-                                                                </div>
-                                                            </td>
-                                                            <td>Indonesia</td>
-                                                            <td class="text-end">2.320</td>
-                                                            <td class="text-end">42.18%</td>
-                                                        </tr>
+                                                        @foreach ($data as $item)
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="flag">
+                                                                        <img src="{{ asset('upload/' . $item->img) }}"
+                                                                            alt="" width="60" />
+                                                                    </div>
+                                                                </td>
+                                                                <td>{{ $item->name }}</td>
+                                                                <td class="text-end">{{ $item->dispo }}</td>
+                                                                <td class="text-end">{{ $item->venda }}</td>
+                                                            </tr>
+                                                        @endforeach
 
                                                     </tbody>
                                                 </table>

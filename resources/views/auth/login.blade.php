@@ -30,7 +30,7 @@
                                 <span class="icon_mail"></span>
                             </div>
                             <div class="input__item">
-                                <input type="text" name="password" placeholder="Password">
+                                <input type="password" name="password" placeholder="Password">
                                 <span class="icon_lock"></span>
                             </div>
                             <button type="submit" class="site-btn">Entrar agora</button>

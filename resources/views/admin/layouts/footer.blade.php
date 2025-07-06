@@ -15,10 +15,10 @@
                             </li> --}}
             </ul>
         </nav>
-        {{-- <div class="copyright">
-                        2025, Desenvolvido <i class="fa fa-heart heart text-danger"></i> por
-                        <a href="http://www.murillolimadev.com.br">Murillo Lima</a>
-                    </div> --}}
+        <div class="copyright">
+            2025, Desenvolvido por<i class="fa fa-heart heart text-danger"></i>
+            <a href="">Bruno Nathan</a>
+        </div>
 
     </div>
 </footer>

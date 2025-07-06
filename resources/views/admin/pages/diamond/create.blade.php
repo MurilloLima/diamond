@@ -140,7 +140,7 @@
                                                 <div class="u-text">
                                                     <h4>{{ auth()->user()->name }}</h4>
                                                     <p class="text-muted">{{ auth()->user()->email }}</p>
-                                                    <a href="{{ route('logout') }}"
+                                                    <a href="#"
                                                         class="btn btn-xs btn-secondary btn-sm">
                                                         Perfil</a>
                                                 </div>
