@@ -7,12 +7,17 @@ use Illuminate\Http\Request;
 
 class DiamondController extends Controller
 {
+    private $diamond;
+    public function __construct(Diamond $diamond)
+    {
+        $this->diamond = $diamond;
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        return view('admin.pages.diamond.index');
     }
 
     /**
@@ -28,7 +33,27 @@ class DiamondController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'img' => 'required',
+            'name' => 'required',
+            'valor' => 'required',
+            'dispo' => 'required',
+            'venda' => 'required',
+        ]);
+
+        if ($request->hasFile('img') && $request->file('img')->isValid()) {
+            $imageName = time() . '.' . $request->img->extension();
+            $request->img->move(public_path('upload/'), $imageName);
+            $this->diamond->name = $request->name;
+            $this->diamond->valor = $request->valor;
+            $this->diamond->dispo = $request->dispo;
+            $this->diamond->venda = $request->venda;
+            $this->diamond->img = $imageName;
+
+            $this->diamond->save();
+
+            return redirect()->back()->with('msg', 'Cadastrado com sucesso!');
+        }
     }
 
     /**

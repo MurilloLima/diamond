@@ -16,15 +16,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home.pages.index');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home.pages.diamond.index');
+
+
+
 
 Route::get('/login', [HomeController::class, 'login'])->name('home.pages.login');
 
 
 Route::get('/dashboard', function () {
-    return view('admin.pages.index');
+    return view('admin.pages.diamond.index');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {

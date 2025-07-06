@@ -34,13 +34,13 @@
                  </li>
 
                  <li class="nav-item">
-                     <a data-bs-toggle="collapse" href="#sidebarLayouts">
+                     <a href="{{ route('admin.pages.diamond.create') }}">
                          <i class="fas fa-th-list"></i>
-                         <p>Add novo</p>
+                         <p>Adicionar</p>
                      </a>
                  </li>
                  <li class="nav-item">
-                     <a data-bs-toggle="collapse" href="#sidebarLayouts">
+                     <a href="{{ route('admin.pages.diamond.index') }}">
                          <i class="fas fa-th-list"></i>
                          <p>Listar todos</p>
                      </a>
