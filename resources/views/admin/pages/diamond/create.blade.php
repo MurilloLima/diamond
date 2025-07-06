@@ -247,7 +247,7 @@
                                                         </duv>
                                                         <duv class="col-md-4">
                                                             <div class="form-group">
-                                                                <label for="">Vendas tatol</label>
+                                                                <label for="">Vendas total</label>
                                                                 <input type="text" class="form-control" name="venda"
                                                                     id="" placeholder="">
                                                             </div>

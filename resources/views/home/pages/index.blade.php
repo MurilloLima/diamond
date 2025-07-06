@@ -46,69 +46,29 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="product__item">
-                                    <div class="product__item__pic set-bg"
-                                        data-setbg="{{ asset('home/img/hero/685cb13408e8a.jpg') }}">
-                                        <div class="ep">99,90</div>
-                                        {{-- <div class="comment"><i class="fa fa-comments"></i> 11</div>
+                            @foreach ($data as $item)
+                                <div class="col-lg-4 col-md-6 col-sm-6">
+                                    <div class="product__item">
+                                        <div class="product__item__pic set-bg"
+                                            data-setbg="{{ asset('upload/' . $item->img) }}">
+                                            <div class="ep">${{ $item->valor }}</div>
+                                            {{-- <div class="comment"><i class="fa fa-comments"></i> 11</div>
                                         <div class="view"><i class="fa fa-eye"></i> 9141</div> --}}
-                                    </div>
-                                    <div class="product__item__text">
-                                        <ul>
-                                            <li>Disponível 203</li>
-                                            <li>Vendas 20</li>
-                                        </ul>
-                                        <h5>
-                                            <a href="#">Marvel Rivals: Nova atualização pode acabar com os jogadores
-                                                tóxicos
-                                            </a>
-                                        </h5>
+                                        </div>
+                                        <div class="product__item__text">
+                                            <ul>
+                                                <li>Disponível {{ $item->dispo }}</li>
+                                                <li>Vendas {{ $item->venda }}</li>
+                                            </ul>
+                                            <h5>
+                                                <a href="#">
+                                                    {{ $item->name }}
+                                                </a>
+                                            </h5>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="product__item">
-                                    <div class="product__item__pic set-bg"
-                                        data-setbg="{{ asset('home/img/hero/f62a68a6eca83b13a24eaf0ef6148b03.sm.webp') }}">
-                                        <div class="ep">99,90</div>
-                                        {{-- <div class="comment"><i class="fa fa-comments"></i> 11</div>
-                                        <div class="view"><i class="fa fa-eye"></i> 9141</div> --}}
-                                    </div>
-                                    <div class="product__item__text">
-                                        <ul>
-                                            <li>Disponível 203</li>
-                                            <li>Vendas 20</li>
-                                        </ul>
-                                        <h5>
-                                            <a href="#">Marvel Rivals: Nova atualização pode acabar com os jogadores
-                                                tóxicos
-                                            </a>
-                                        </h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="product__item">
-                                    <div class="product__item__pic set-bg"
-                                        data-setbg="{{ asset('home/img/hero/685e076a957ad.jpg') }}">
-                                        <div class="ep">99,90</div>
-                                        {{-- <div class="comment"><i class="fa fa-comments"></i> 11</div>
-                                        <div class="view"><i class="fa fa-eye"></i> 9141</div> --}}
-                                    </div>
-                                    <div class="product__item__text">
-                                        <ul>
-                                            <li>Disponível 203</li>
-                                            <li>Vendas 20</li>
-                                        </ul>
-                                        <h5>
-                                            <a href="#">Marvel Rivals: Nova atualização pode acabar com os jogadores
-                                                tóxicos
-                                            </a>
-                                        </h5>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
 
@@ -121,7 +81,8 @@
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-4">
                                 <div class="btn__all">
-                                    <a href="#" class="primary-btn">Visualizar todos <span class="arrow_right"></span></a>
+                                    <a href="#" class="primary-btn">Visualizar todos <span
+                                            class="arrow_right"></span></a>
                                 </div>
                             </div>
                         </div>
@@ -200,7 +161,8 @@
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-4">
                                 <div class="btn__all">
-                                    <a href="#" class="primary-btn">Visualizar todos<span class="arrow_right"></span></a>
+                                    <a href="#" class="primary-btn">Visualizar todos<span
+                                            class="arrow_right"></span></a>
                                 </div>
                             </div>
                         </div>
