@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DiamondController;
 use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -31,8 +32,14 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    //admin
+    //diamond
+    Route::get('/admin/diamond', [DiamondController::class, 'index'])->name('admin.pages.diamond.index');
+    Route::get('/admin/diamond/create', [DiamondController::class, 'create'])->name('admin.pages.diamond.create');
+    Route::post('/admin/diamond/store', [DiamondController::class, 'store'])->name('admin.pages.diamond.store');
+    Route::delete('/admin/diamond/delete/{id}', [DiamondController::class, 'destroy'])->name('admin.pages.diamond.destroy');
 
+
+    Route::get('/sair', [HomeController::class, 'destroy'])->name('sair');
 });
 
 require __DIR__ . '/auth.php';
