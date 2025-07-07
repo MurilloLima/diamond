@@ -15,7 +15,7 @@
 
                                 {{-- <h2>Fate / Stay Night: Unlimited Blade Works</h2>
                                 <p>After 30 days of travel across the world...</p> --}}
-                                <a href="#">
+                                <a href="{{ route('home.pages.func.index') }}">
                                     <span>Como funciona</span>
                                     <i class="fa fa-angle-right"></i>
                                 </a>

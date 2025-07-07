@@ -14,7 +14,7 @@
                     <div class="header__nav">
                         <nav class="header__menu mobile-menu">
                             <ul>
-                                <li class="active"><a href="">Home</a></li>
+                                <li class="active"><a href="{{ route('home.pages.diamond.index') }}">Home</a></li>
                                 <li>
                                     <a href="">Categorias <span class="arrow_carrot-down"></span></a>
                                     <ul class="dropdown">

@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home.pages.diamond.index');
+Route::get('/funciona', [HomeController::class, 'func'])->name('home.pages.func.index');
 
 
 

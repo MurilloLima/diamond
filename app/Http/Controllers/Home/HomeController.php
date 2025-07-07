@@ -15,7 +15,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $data = Diamond::latest()->get();
+        $data = Diamond::latest()->limit(4)->get();
         return view('home.pages.index', compact('data'));
     }
 
@@ -30,9 +30,9 @@ class HomeController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function func()
     {
-        //
+        return view('home.pages.func.index');
     }
 
     /**
