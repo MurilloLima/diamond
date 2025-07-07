@@ -140,8 +140,7 @@
                                                 <div class="u-text">
                                                     <h4>{{ auth()->user()->name }}</h4>
                                                     <p class="text-muted">{{ auth()->user()->email }}</p>
-                                                    <a href="#"
-                                                        class="btn btn-xs btn-secondary btn-sm">
+                                                    <a href="#" class="btn btn-xs btn-secondary btn-sm">
                                                         Perfil</a>
                                                 </div>
                                             </div>
@@ -233,9 +232,13 @@
                                                         <duv class="col-md-4">
                                                             <div class="form-group">
                                                                 <label for="exampleInputPassword1">Valor</label>
-                                                                <input type="text" class="form-control"
+                                                                {{-- <input type="text"
                                                                     id="exampleInputPassword1" placeholder=""
-                                                                    name="valor">
+                                                                    name="valor"> --}}
+
+                                                                <input type="text" class="form-control" name="valor"
+                                                                    placeholder="Digite aqui"
+                                                                    onKeyPress="return(moeda(this,'.',',',event))">
                                                             </div>
                                                         </duv>
                                                         <duv class="col-md-4">

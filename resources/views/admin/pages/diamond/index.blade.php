@@ -200,10 +200,11 @@
                                                 <table class="table mt-3">
                                                     <thead>
                                                         <tr>
-                                                            <th scope="col">#</th>
-                                                            <th scope="col">Nome</th>
-                                                            <th scope="col">Valor</th>
-                                                            <th scope="col">Disponivel</th>
+                                                            <th>#</th>
+                                                            <th>Nome</th>
+                                                            <th>Valor</th>
+                                                            <th>Disponivel</th>
+                                                            <th>Vendas</th>
                                                             <th></th>
                                                         </tr>
                                                     </thead>
@@ -212,6 +213,7 @@
                                                             <tr>
                                                                 <td>{{ $item->id }}</td>
                                                                 <td>{{ $item->name }}</td>
+                                                                <td>{{ $item->valor }}</td>
                                                                 <td>{{ $item->dispo }}</td>
                                                                 <td>{{ $item->venda }}</td>
                                                                 <td>
