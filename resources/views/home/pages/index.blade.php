@@ -6,16 +6,19 @@
     <section class="hero">
         <div class="container">
             <div class="hero__slider owl-carousel">
-                <div class="hero__items set-bg" data-setbg="{{ asset('home/img/hero/hero-1.jpg') }}">
+                <div class="hero__items set-bg">
                     <div class="row">
-                        <div class="col-lg-6">
-                            <div class="hero__text">
+                        <div class="col-lg-12">
+                            <div class="hero__text" style="text-align: left">
                                 <div class="label">Comprar e vender</div>
                                 <p>contas, jogos, gift cards, gold, itens digitais e mais!</p>
 
                                 {{-- <h2>Fate / Stay Night: Unlimited Blade Works</h2>
                                 <p>After 30 days of travel across the world...</p> --}}
-                                <a href="#"><span>Como funciona</span> <i class="fa fa-angle-right"></i></a>
+                                <a href="#">
+                                    <span>Como funciona</span>
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -47,7 +50,7 @@
                         </div>
                         <div class="row">
                             @foreach ($data as $item)
-                                <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="col-lg-3 col-md-6 col-sm-6">
                                     <div class="product__item">
                                         <div class="product__item__pic set-bg"
                                             data-setbg="{{ asset('upload/' . $item->img) }}">
