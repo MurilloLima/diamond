@@ -84,8 +84,9 @@ class DiamondController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Diamond $diamond)
+    public function destroy($id)
     {
-        //
+        $this->diamond->destroy($id);
+        return redirect()->back()->with('msg', 'Deletada com sucesso!');
     }
 }

@@ -204,26 +204,30 @@
                                                             <th scope="col">Nome</th>
                                                             <th scope="col">Valor</th>
                                                             <th scope="col">Disponivel</th>
+                                                            <th></th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <tr>
-                                                            <td>1</td>
-                                                            <td>Mark</td>
-                                                            <td>Otto</td>
-                                                            <td>@mdo</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>2</td>
-                                                            <td>Jacob</td>
-                                                            <td>Thornton</td>
-                                                            <td>@fat</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>3</td>
-                                                            <td colspan="2">Larry the Bird</td>
-                                                            <td>@twitter</td>
-                                                        </tr>
+                                                        @foreach ($data as $item)
+                                                            <tr>
+                                                                <td>{{ $item->id }}</td>
+                                                                <td>{{ $item->name }}</td>
+                                                                <td>{{ $item->dispo }}</td>
+                                                                <td>{{ $item->venda }}</td>
+                                                                <td>
+                                                                    <form onsubmit="return confirm('Deseja deletar?');"
+                                                                        action="{{ route('admin.pages.diamond.destroy', $item->id) }}"
+                                                                        method="POST">
+                                                                        @csrf
+                                                                        @method('DELETE')
+                                                                        <button type="submit" class="btn btn-sm"
+                                                                            style="height: 26px">
+                                                                            <i class="fa fa-times"></i>
+                                                                        </button>
+                                                                    </form>
+                                                                </td>
+                                                            </tr>
+                                                        @endforeach
                                                     </tbody>
                                                 </table>
                                             </div>
