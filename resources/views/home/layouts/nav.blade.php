@@ -15,7 +15,8 @@
                         <nav class="header__menu mobile-menu">
                             <ul>
                                 <li class="active"><a href="">Home</a></li>
-                                <li><a href="">Categorias <span class="arrow_carrot-down"></span></a>
+                                <li>
+                                    <a href="">Categorias <span class="arrow_carrot-down"></span></a>
                                     <ul class="dropdown">
                                         <li><a href="">Free Fire</a></li>
                                         {{-- <li><a href="./anime-details.html">Anime Details</a></li> --}}
