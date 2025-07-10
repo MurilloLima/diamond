@@ -4,44 +4,42 @@ namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
 use App\Models\Diamond;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class HomeController extends Controller
+class DiamondController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $data = Diamond::latest()->limit(4)->get();
-        return view('home.pages.index', compact('data'));
+        //
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function login()
+    public function create()
     {
-        return view('home.pages.login');
+        //
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function func()
+    public function store(Request $request)
     {
-        return view('home.pages.func.index');
+        //
     }
 
     /**
      * Display the specified resource.
      */
-    public function view(string $slug)
+    public function view($slug)
     {
-        $data = Diamond::where('slug','=',$slug)->first();
-        return view('home.pages.diamond.view');
+        $data = Diamond::where('slug', '=', $slug)->first();
+        dd($data);
+        return view('',compact('data'));
     }
 
     /**
@@ -63,11 +61,8 @@ class HomeController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Request $request): RedirectResponse
+    public function destroy(string $id)
     {
-        Auth::guard('web')->logout();
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-        return redirect('/');
+        //
     }
 }

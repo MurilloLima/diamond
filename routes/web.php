@@ -19,6 +19,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home.pages.diamond.index');
 Route::get('/funciona', [HomeController::class, 'func'])->name('home.pages.func.index');
+//diamond
+Route::get('/diamond', [DiamondController::class, 'index'])->name('home.pages.diamond.index');
+Route::get('/diamond/view/{slug}', [HomeController::class, 'view'])->name('home.pages.diamond.view');
 
 
 

@@ -15,9 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('img');
             $table->string('name');
+            $table->string('slug');
             $table->string('valor');
             $table->string('dispo');
             $table->string('venda');
+            $table->longText('desc');
             $table->timestamps();
         });
     }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Diamond;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class DiamondController extends Controller
 {
@@ -37,6 +38,7 @@ class DiamondController extends Controller
         $request->validate([
             'img' => 'required',
             'name' => 'required',
+            'desc' => 'required',
             'valor' => 'required',
             'dispo' => 'required',
             'venda' => 'required',
@@ -46,9 +48,11 @@ class DiamondController extends Controller
             $imageName = time() . '.' . $request->img->extension();
             $request->img->move(public_path('upload/'), $imageName);
             $this->diamond->name = $request->name;
+            $this->diamond->slug = Str::slug($request->name, '-');
             $this->diamond->valor = $request->valor;
             $this->diamond->dispo = $request->dispo;
             $this->diamond->venda = $request->venda;
+            $this->diamond->desc = $request->desc;
             $this->diamond->img = $imageName;
 
             $this->diamond->save();

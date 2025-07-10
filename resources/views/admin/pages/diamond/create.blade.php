@@ -255,7 +255,15 @@
                                                                     id="" placeholder="">
                                                             </div>
                                                         </duv>
+                                                        <duv class="col-md-12">
+                                                            <div class="form-group">
+                                                                <label for="">Descrição</label>
+                                                                <textarea name="desc" class="form-control" cols="30" rows="10">
 
+                                                                </textarea>
+
+                                                            </div>
+                                                        </duv>
                                                     </div>
                                                 </div>
                                                 <!-- /.card-body -->
