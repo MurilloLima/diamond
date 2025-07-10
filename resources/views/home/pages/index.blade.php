@@ -52,7 +52,7 @@
                             @foreach ($data as $item)
                                 <div class="col-lg-3 col-md-6 col-sm-6">
                                     <div class="product__item">
-                                        <a href="{{ route('home.pages.diamond.view', $item->desc) }}">
+                                        <a href="{{ route('home.pages.diamond.view', [$item->slug]) }}">
                                             <div class="product__item__pic set-bg"
                                                 data-setbg="{{ asset('upload/' . $item->img) }}">
                                                 <div class="ep">${{ $item->valor }}</div>
@@ -65,7 +65,7 @@
                                                     <li>Vendas {{ $item->venda }}</li>
                                                 </ul>
                                                 <h5>
-                                                    <a href="{{ route('home.pages.diamond.view', [$item->name]) }}">
+                                                    <a href="">
                                                         {{ $item->name }}
                                                     </a>
                                                 </h5>

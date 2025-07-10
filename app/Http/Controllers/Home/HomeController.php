@@ -16,6 +16,7 @@ class HomeController extends Controller
     public function index()
     {
         $data = Diamond::latest()->limit(4)->get();
+        // dd($data);
         return view('home.pages.index', compact('data'));
     }
 
@@ -41,7 +42,7 @@ class HomeController extends Controller
     public function view(string $slug)
     {
         $data = Diamond::where('slug','=',$slug)->first();
-        return view('home.pages.diamond.view');
+        return view('home.pages.diamond.view', compact('data'));
     }
 
     /**

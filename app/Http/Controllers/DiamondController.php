@@ -48,7 +48,7 @@ class DiamondController extends Controller
             $imageName = time() . '.' . $request->img->extension();
             $request->img->move(public_path('upload/'), $imageName);
             $this->diamond->name = $request->name;
-            $this->diamond->slug = Str::slug($request->name, '-');
+            $this->diamond->slug =  Str::slug($request->name, '-');
             $this->diamond->valor = $request->valor;
             $this->diamond->dispo = $request->dispo;
             $this->diamond->venda = $request->venda;
