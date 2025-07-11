@@ -11,16 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('diamonds', function (Blueprint $table) {
+        Schema::create('categorias', function (Blueprint $table) {
             $table->id();
-            $table->integer('cat_id');
-            $table->string('img');
             $table->string('name');
-            $table->string('slug');
-            $table->string('valor');
-            $table->string('dispo');
-            $table->string('venda');
-            $table->longText('desc');
             $table->timestamps();
         });
     }
@@ -30,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('diamonds');
+        Schema::dropIfExists('categorias');
     }
 };

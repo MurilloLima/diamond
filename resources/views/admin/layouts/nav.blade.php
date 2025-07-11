@@ -3,8 +3,8 @@
      <div class="sidebar-logo">
          <!-- Logo Header -->
          <div class="logo-header" data-background-color="dark">
-              <a href="" class="logo">
-                <span>Logomarca</span>
+             <a href="" class="logo">
+                 <span>Logomarca</span>
                  {{-- <img src="{{ asset('admin/assets/img/kaiadmin/logo_light.svg') }}" alt="navbar brand" class="navbar-brand"
                      height="20" /> --}}
              </a>
@@ -32,10 +32,15 @@
                          <span class="caret"></span>
                      </a>
                  </li>
-
+                 <li class="nav-item">
+                     <a href="">
+                         <i class="fas fa-th-list"></i>
+                         <p>Categorias</p>
+                     </a>
+                 </li>
                  <li class="nav-item">
                      <a href="{{ route('admin.pages.diamond.create') }}">
-                         <i class="fas fa-th-list"></i>
+                         <i class="fas fa-save"></i>
                          <p>Adicionar</p>
                      </a>
                  </li>
