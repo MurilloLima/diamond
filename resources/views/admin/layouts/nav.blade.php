@@ -39,17 +39,15 @@
                      </a>
                  </li>
                  <li class="nav-item">
-                     <a href="{{ route('admin.pages.diamond.create') }}">
-                         <i class="fas fa-save"></i>
-                         <p>Adicionar</p>
-                     </a>
+                     @foreach ($cat as $item)
+                         <a href="{{ route('admin.pages.diamond.index') }}">
+                             <i class="fas fa-save"></i>
+                             <p>{{ $item->name }}</p>
+                         </a>
+                     @endforeach
+
                  </li>
-                 <li class="nav-item">
-                     <a href="{{ route('admin.pages.diamond.index') }}">
-                         <i class="fas fa-th-list"></i>
-                         <p>Listar todos</p>
-                     </a>
-                 </li>
+
                  <li class="nav-item">
                      <a href="{{ route('sair') }}">
                          <i class="fas fa-pen-square"></i>

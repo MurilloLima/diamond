@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categoria;
 use App\Models\Diamond;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -19,7 +20,8 @@ class DiamondController extends Controller
     public function index()
     {
         $data = Diamond::latest()->get();
-        return view('admin.pages.diamond.index', compact('data'));
+        $cat = Categoria::latest()->get();
+        return view('admin.pages.diamond.index', compact('data', 'cat'));
     }
 
     /**
@@ -27,7 +29,8 @@ class DiamondController extends Controller
      */
     public function create()
     {
-        return view('admin.pages.diamond.create');
+        $cat = Categoria::latest()->get();
+        return view('admin.pages.diamond.create', compact('cat'));
     }
 
     /**
@@ -48,6 +51,7 @@ class DiamondController extends Controller
             $imageName = time() . '.' . $request->img->extension();
             $request->img->move(public_path('upload/'), $imageName);
             $this->diamond->name = $request->name;
+            $this->diamond->cat_id = $request->cat_id;
             $this->diamond->slug =  Str::slug($request->name, '-');
             $this->diamond->valor = $request->valor;
             $this->diamond->dispo = $request->dispo;

@@ -5,27 +5,7 @@
         @include('admin.layouts.nav')
         <div class="main-panel">
             <div class="main-header">
-                <div class="main-header-logo">
-                    <!-- Logo Header -->
-                    <div class="logo-header" data-background-color="dark">
-                        {{-- <a href="index.html" class="logo">
-                            <img src="{{ asset('home/assets/img/kaiadmin/logo_light.svg') }}" alt="navbar brand" class="navbar-brand"
-                                height="20" />
-                        </a> --}}
-                        <div class="nav-toggle">
-                            <button class="btn btn-toggle toggle-sidebar">
-                                <i class="gg-menu-right"></i>
-                            </button>
-                            <button class="btn btn-toggle sidenav-toggler">
-                                <i class="gg-menu-left"></i>
-                            </button>
-                        </div>
-                        <button class="topbar-toggler more">
-                            <i class="gg-more-vertical-alt"></i>
-                        </button>
-                    </div>
-                    <!-- End Logo Header -->
-                </div>
+
                 <!-- Navbar Header -->
                 <nav class="navbar navbar-header navbar-header-transparent navbar-expand-lg border-bottom">
                     <div class="container-fluid">
@@ -53,67 +33,6 @@
                                         </div>
                                     </form>
                                 </ul>
-                            </li>
-
-                            <li class="nav-item topbar-icon dropdown hidden-caret">
-
-                                <div class="dropdown-menu quick-actions animated fadeIn">
-
-                                    <div class="quick-actions-scroll scrollbar-outer">
-                                        <div class="quick-actions-items">
-                                            <div class="row m-0">
-                                                <a class="col-6 col-md-4 p-0" href="#">
-                                                    <div class="quick-actions-item">
-                                                        <div class="avatar-item bg-danger rounded-circle">
-                                                            <i class="far fa-calendar-alt"></i>
-                                                        </div>
-                                                        <span class="text">Calendar</span>
-                                                    </div>
-                                                </a>
-                                                <a class="col-6 col-md-4 p-0" href="#">
-                                                    <div class="quick-actions-item">
-                                                        <div class="avatar-item bg-warning rounded-circle">
-                                                            <i class="fas fa-map"></i>
-                                                        </div>
-                                                        <span class="text">Maps</span>
-                                                    </div>
-                                                </a>
-                                                <a class="col-6 col-md-4 p-0" href="#">
-                                                    <div class="quick-actions-item">
-                                                        <div class="avatar-item bg-info rounded-circle">
-                                                            <i class="fas fa-file-excel"></i>
-                                                        </div>
-                                                        <span class="text">Reports</span>
-                                                    </div>
-                                                </a>
-                                                <a class="col-6 col-md-4 p-0" href="#">
-                                                    <div class="quick-actions-item">
-                                                        <div class="avatar-item bg-success rounded-circle">
-                                                            <i class="fas fa-envelope"></i>
-                                                        </div>
-                                                        <span class="text">Emails</span>
-                                                    </div>
-                                                </a>
-                                                <a class="col-6 col-md-4 p-0" href="#">
-                                                    <div class="quick-actions-item">
-                                                        <div class="avatar-item bg-primary rounded-circle">
-                                                            <i class="fas fa-file-invoice-dollar"></i>
-                                                        </div>
-                                                        <span class="text">Invoice</span>
-                                                    </div>
-                                                </a>
-                                                <a class="col-6 col-md-4 p-0" href="#">
-                                                    <div class="quick-actions-item">
-                                                        <div class="avatar-item bg-secondary rounded-circle">
-                                                            <i class="fas fa-credit-card"></i>
-                                                        </div>
-                                                        <span class="text">Payments</span>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </li>
 
                             <li class="nav-item topbar-user dropdown hidden-caret">
@@ -155,39 +74,88 @@
                 </nav>
                 <!-- End Navbar -->
             </div>
-
             <div class="container">
                 <div class="page-inner">
-                    <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4">
-                        <div>
-                            {{-- <h3 class="fw-bold mb-3">Dashboard</h3> --}}
-                            {{-- <h6 class="op-7 mb-2">Free Bootstrap 5 Admin Dashboard</h6> --}}
-                        </div>
-                        <div class="ms-md-auto py-2 py-md-0">
-                            {{-- <a href="#" class="btn btn-label-info btn-round me-2">Manage</a> --}}
-                            {{-- <a href="{{ route('admin.pages.diamond.create') }}" class="btn btn-primary btn-round">Add
-                                novo</a> --}}
-                        </div>
-                    </div>
-
-
                     <div class="row">
+                        <div class="col-md-12">
+                            @if ($errors->any())
+                                <div class="alert alert-danger text-center "
+                                    style="color: white; margin: 10px; color:#000;">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li style="text-align: center">{{ $error }}
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+                            @if (session('msg'))
+                                <div class="row text-center">
+                                    <div class="col-md-12">
+                                        <div class="alert alert-success text-center"
+                                            style="color: white; margin: 10px; color:#000;">
+                                            {{ session('msg') }}
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
+                        </div>
+
+
                         <div class="col-md-12">
                             <div class="card card-round">
                                 <div class="card-header">
                                     <div class="card-head-row card-tools-still-right">
                                         <h4 class="card-title">Categorias</h4>
                                         <div class="card-tools">
-                                            {{-- <button class="btn btn-icon btn-link btn-primary btn-xs">
-                                                <span class="fa fa-angle-down"></span>
-                                            </button> --}}
-                                            <button class="btn btn-primary">Adicionar</button>
+                                            <!-- Button trigger modal -->
+                                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                                data-target="#categoria">
+                                                Adicionar
+                                            </button>
                                             <button class="btn btn-icon btn-link btn-primary btn-xs btn-refresh-card">
                                                 <span class="fa fa-sync-alt"></span>
                                             </button>
                                             <button class="btn btn-icon btn-link btn-primary btn-xs">
                                                 <span class="fa fa-times"></span>
                                             </button>
+
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="categoria" tabindex="-1" role="dialog"
+                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <form action="{{ route('admin.pages.categorias.store') }}"
+                                                        method="post">
+                                                        @csrf
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLabel">
+                                                                    Adicionar
+                                                                </h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <div class="form-group">
+                                                                    <label for="">Nome</label>
+                                                                    <input type="text" name="name"
+                                                                        class="form-control">
+                                                                </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Fechar</button>
+                                                                <button type="submit" class="btn btn-primary">
+                                                                    Salvar
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <p class="card-category">
@@ -203,10 +171,7 @@
                                                         <tr>
                                                             <th>#</th>
                                                             <th>Nome</th>
-                                                            <th>Valor</th>
-                                                            <th>Disponivel</th>
-                                                            <th>Vendas</th>
-                                                            <th></th>
+                                                            <th>criado em</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -214,12 +179,11 @@
                                                             <tr>
                                                                 <td>{{ $item->id }}</td>
                                                                 <td>{{ $item->name }}</td>
-                                                                <td>{{ $item->valor }}</td>
-                                                                <td>{{ $item->dispo }}</td>
-                                                                <td>{{ $item->venda }}</td>
+                                                                <td>{{ $item->created_at }}</td>
                                                                 <td>
-                                                                    <form onsubmit="return confirm('Deseja deletar?');"
-                                                                        action="{{ route('admin.pages.diamond.destroy', $item->id) }}"
+                                                                    <form
+                                                                        onsubmit="return confirm('Deseja deletar essa categoria?');"
+                                                                        action="{{ route('admin.pages.categoria.destroy', $item->id) }}"
                                                                         method="POST">
                                                                         @csrf
                                                                         @method('DELETE')
@@ -241,12 +205,10 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
 
             @include('admin.layouts.footer')
         </div>
-
     </div>
 @endsection

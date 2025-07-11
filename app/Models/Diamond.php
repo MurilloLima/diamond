@@ -9,7 +9,12 @@ class Diamond extends Model
 {
     use HasFactory;
 
-     public function categoria()
+    protected $fillable = [
+        'name',
+        'cat_id'
+    ];
+
+    public function categoria()
     {
         return $this->belongsTo(Categoria::class, 'cat_id', 'id');
     }

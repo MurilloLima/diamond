@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
+use App\Models\Categoria;
 use App\Models\Diamond;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -16,8 +17,8 @@ class HomeController extends Controller
     public function index()
     {
         $data = Diamond::latest()->limit(4)->get();
-        // dd($data);
-        return view('home.pages.index', compact('data'));
+        $cat = Categoria::latest()->get();
+        return view('home.pages.index', compact('data','cat'));
     }
 
     /**
@@ -42,7 +43,8 @@ class HomeController extends Controller
     public function view(string $slug)
     {
         $data = Diamond::where('slug','=',$slug)->first();
-        return view('home.pages.diamond.view', compact('data'));
+        $cat = Categoria::latest()->get();
+        return view('home.pages.diamond.view', compact('data','cat'));
     }
 
     /**

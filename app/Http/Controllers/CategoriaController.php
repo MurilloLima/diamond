@@ -4,16 +4,23 @@ namespace App\Http\Controllers;
 
 use App\Models\Categoria;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class CategoriaController extends Controller
 {
+    private $categoria;
+    public function __construct(Categoria $categoria)
+    {
+        $this->categoria = $categoria;
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
         $data = Categoria::latest()->get();
-        return view('admin.pages.categorias.index', compact('data'));
+        $cat = Categoria::latest()->get();
+        return view('admin.pages.categorias.index', compact(['data', 'cat']));
     }
 
     /**
@@ -29,7 +36,13 @@ class CategoriaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+        ]);
+        $this->categoria->name = $request->name;
+        $this->categoria->slug = Str::slug($request->name, '-');
+        $this->categoria->save();
+        return redirect()->back()->with('msg', 'Cadastrado com sucesso!');
     }
 
     /**

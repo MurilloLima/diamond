@@ -174,11 +174,6 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="card card-round">
-                                <div class="card-header">
-                                    <div class="card-head-row card-tools-still-right">
-                                        <h4 class="card-title">Diamantes</h4>
-                                    </div>
-                                </div>
                                 <div class="col-md-12">
                                     @if ($errors->any())
                                         <div class="alert alert-danger text-center "
@@ -202,6 +197,12 @@
                                         </div>
                                     @endif
                                 </div>
+                                <div class="card-header">
+                                    <div class="card-head-row card-tools-still-right">
+                                        <h4 class="card-title">Diamantes</h4>
+                                    </div>
+                                </div>
+
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-md-12">
@@ -211,7 +212,18 @@
                                                 <!-- form start -->
                                                 <div class="card-body">
                                                     <div class="row">
-                                                        <duv class="col-md-12">
+                                                        <duv class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label for="">Nome</label>
+                                                                <select name="cat_id" class="form-control">
+                                                                    @foreach ($cat as $item)
+                                                                        <option value="{{ $item->id }}">
+                                                                            {{ $item->name }}</option>
+                                                                    @endforeach
+                                                                </select>
+                                                            </div>
+                                                        </duv>
+                                                        <duv class="col-md-6">
                                                             <div class="form-group">
                                                                 <label for="exampleInputEmail1">Imagem</label>
                                                                 <input type="file" class="form-control" name="img"

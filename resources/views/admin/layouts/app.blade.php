@@ -890,6 +890,9 @@
 
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link rel="stylesheet" href="{{ asset('admin/assets/css/demo.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     <style type="text/css">
         /* Chart.js */
         @-webkit-keyframes chartjs-render-animation {
@@ -943,114 +946,21 @@
         }
     </style>
 
-    {{-- ..moeda --}}
-    <script language="javascript">
-        function moeda(a, e, r, t) {
-            let n = "",
-                h = j = 0,
-                u = tamanho2 = 0,
-                l = ajd2 = "",
-                o = window.Event ? t.which : t.keyCode;
-            if (13 == o || 8 == o)
-                return !0;
-            if (n = String.fromCharCode(o),
-                -1 == "0123456789".indexOf(n))
-                return !1;
-            for (u = a.value.length,
-                h = 0; h < u && ("0" == a.value.charAt(h) || a.value.charAt(h) == r); h++)
-            ;
-            for (l = ""; h < u; h++)
-                -
-                1 != "0123456789".indexOf(a.value.charAt(h)) && (l += a.value.charAt(h));
-            if (l += n,
-                0 == (u = l.length) && (a.value = ""),
-                1 == u && (a.value = "0" + r + "0" + l),
-                2 == u && (a.value = "0" + r + l),
-                u > 2) {
-                for (ajd2 = "",
-                    j = 0,
-                    h = u - 3; h >= 0; h--)
-                    3 == j && (ajd2 += e,
-                        j = 0),
-                    ajd2 += l.charAt(h),
-                    j++;
-                for (a.value = "",
-                    tamanho2 = ajd2.length,
-                    h = tamanho2 - 1; h >= 0; h--)
-                    a.value += ajd2.charAt(h);
-                a.value += r + l.substr(u - 2, u)
-            }
-            return !1
-        }
-    </script>
+
 
 </head>
 
 <body>
     @yield('content')
-    <!--   Core JS Files   -->
-    <script src="{{ asset('admin/assets/js/core/jquery-3.7.1.min.js') }}"></script>
-    <script src="{{ asset('admin/assets/js/core/popper.min.js') }}"></script>
-    <script src="{{ asset('admin/assets/js/core/bootstrap.min.js') }}"></script>
 
-    <!-- jQuery Scrollbar -->
-    <script src="{{ asset('admin/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js') }}"></script>
-
-    <!-- Chart JS -->
-    <script src="{{ asset('admin/assets/js/plugin/chart.js/chart.min.js') }}"></script>
-
-    <!-- jQuery Sparkline -->
-    <script src="{{ asset('assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js') }}"></script>
-
-    <!-- Chart Circle -->
-    <script src="{{ asset('assets/js/plugin/chart-circle/circles.min.js') }}"></script>
-
-    <!-- Datatables -->
-    <script src="{{ asset('assets/js/plugin/datatables/datatables.min.js') }}"></script>
-
-    <!-- Bootstrap Notify -->
-    <script src="{{ asset('admin/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js') }}"></script>
-
-    <!-- jQuery Vector Maps -->
-    <script src="{{ asset('admin/assets/js/plugin/jsvectormap/jsvectormap.min.js') }}"></script>
-    <script src="{{ asset('admin/assets/js/plugin/jsvectormap/world.js') }}"></script>
-
-    <!-- Sweet Alert -->
-    <script src="{{ asset('admin/assets/js/plugin/sweetalert/sweetalert.min.js') }}"></script>
-
-    <!-- Kaiadmin JS -->
-    <script src="{{ asset('admin/assets/js/kaiadmin.min.js') }}"></script>
-
-    <!-- Kaiadmin DEMO methods, don't include it in your project! -->
-    <script src="{{ asset('admin/assets/js/setting-demo.js') }}"></script>
-    <script src="{{ asset('admin/assets/js/demo.js') }}"></script>
-    <script>
-        $("#lineChart").sparkline([102, 109, 120, 99, 110, 105, 115], {
-            type: "line",
-            height: "70",
-            width: "100%",
-            lineWidth: "2",
-            lineColor: "#177dff",
-            fillColor: "rgba(23, 125, 255, 0.14)",
-        });
-
-        $("#lineChart2").sparkline([99, 125, 122, 105, 110, 124, 115], {
-            type: "line",
-            height: "70",
-            width: "100%",
-            lineWidth: "2",
-            lineColor: "#f3545d",
-            fillColor: "rgba(243, 84, 93, .14)",
-        });
-
-        $("#lineChart3").sparkline([105, 103, 123, 100, 95, 105, 115], {
-            type: "line",
-            height: "70",
-            width: "100%",
-            lineWidth: "2",
-            lineColor: "#ffa534",
-            fillColor: "rgba(255, 165, 52, .14)",
-        });
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
 </body>
 

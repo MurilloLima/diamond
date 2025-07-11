@@ -14,16 +14,14 @@
                     <div class="header__nav">
                         <nav class="header__menu mobile-menu">
                             <ul>
-                                <li class="active"><a href="{{ route('home.pages.diamond.index') }}">Home</a></li>
+                                <li class="active"><a href="{{ route('home.pages.home.index') }}">Home</a></li>
                                 <li>
                                     <a href="">Categorias <span class="arrow_carrot-down"></span></a>
                                     <ul class="dropdown">
-                                        <li><a href="">Free Fire</a></li>
-                                        {{-- <li><a href="./anime-details.html">Anime Details</a></li> --}}
-                                        {{-- <li><a href="./anime-watching.html">Anime Watching</a></li> --}}
-                                        {{-- <li><a href="./blog-details.html">Blog</a></li> --}}
-                                        {{-- <li><a href="./signup.html">Sign Up</a></li> --}}
-                                        {{-- <li><a href="{{ route('login') }}">Login</a></li> --}}
+                                        @foreach ($cat as $item)
+                                            <li><a href="">{{ $item->name }}</a></li>
+                                        @endforeach
+
                                     </ul>
                                 </li>
                                 <li><a href="">Blog</a></li>

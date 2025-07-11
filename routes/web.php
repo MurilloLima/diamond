@@ -4,6 +4,7 @@ use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\DiamondController;
 use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Categoria;
 use App\Models\Diamond;
 use Illuminate\Support\Facades\Route;
 
@@ -18,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'index'])->name('home.pages.diamond.index');
+Route::get('/', [HomeController::class, 'index'])->name('home.pages.home.index');
 Route::get('/funciona', [HomeController::class, 'func'])->name('home.pages.func.index');
 //diamond
 Route::get('/diamond', [DiamondController::class, 'index'])->name('home.pages.diamond.index');
@@ -32,6 +33,7 @@ Route::get('/login', [HomeController::class, 'login'])->name('home.pages.login')
 
 Route::get('/dashboard', function () {
     $data = Diamond::latest()->get();
+    $cat = Categoria::latest()->get();
     return view('admin.pages.diamond.index', compact('data'));
 })->middleware(['auth', 'verified'])->name('dashboard');
 
@@ -49,6 +51,7 @@ Route::middleware('auth')->group(function () {
     //categorias
     Route::get('/admin/categorias', [CategoriaController::class, 'index'])->name('admin.pages.categorias.index');
     Route::post('/admin/categoria/store', [CategoriaController::class, 'store'])->name('admin.pages.categorias.store');
+    Route::delete('/admin/categoria/delete/{id}', [CategoriaController::class, 'destroy'])->name('admin.pages.categoria.destroy');
 
 
     Route::get('/sair', [HomeController::class, 'destroy'])->name('sair');

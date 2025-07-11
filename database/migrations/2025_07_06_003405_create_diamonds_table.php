@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('diamonds', function (Blueprint $table) {
             $table->id();
-            $table->integer('cat_id');
             $table->string('img');
+            $table->integer('cat_id');
             $table->string('name');
             $table->string('slug');
             $table->string('valor');
