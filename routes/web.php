@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\DiamondController;
 use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\ProfileController;
@@ -44,6 +45,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/diamond/create', [DiamondController::class, 'create'])->name('admin.pages.diamond.create');
     Route::post('/admin/diamond/store', [DiamondController::class, 'store'])->name('admin.pages.diamond.store');
     Route::delete('/admin/diamond/delete/{id}', [DiamondController::class, 'destroy'])->name('admin.pages.diamond.destroy');
+
+    //categorias
+    Route::get('/admin/categorias', [CategoriaController::class, 'index'])->name('admin.pages.categorias.index');
+    Route::post('/admin/categoria/store', [CategoriaController::class, 'store'])->name('admin.pages.categorias.store');
 
 
     Route::get('/sair', [HomeController::class, 'destroy'])->name('sair');

@@ -12,7 +12,8 @@ class CategoriaController extends Controller
      */
     public function index()
     {
-        //
+        $data = Categoria::latest()->get();
+        return view('admin.pages.categorias.index', compact('data'));
     }
 
     /**

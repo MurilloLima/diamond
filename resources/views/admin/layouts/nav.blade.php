@@ -33,7 +33,7 @@
                      </a>
                  </li>
                  <li class="nav-item">
-                     <a href="">
+                     <a href="{{ route('admin.pages.categorias.index') }}">
                          <i class="fas fa-th-list"></i>
                          <p>Categorias</p>
                      </a>

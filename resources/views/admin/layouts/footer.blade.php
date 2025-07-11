@@ -16,8 +16,8 @@
             </ul>
         </nav>
         <div class="copyright">
-            2025, Desenvolvido por<i class="fa fa-heart heart text-danger"></i>
-            <a href="">Bruno Nathan</a>
+            2025, Desenvolvido por
+            <a href="https://murillolimadev.com.br/">Murillo Lima</a>
         </div>
 
     </div>
