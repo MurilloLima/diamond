@@ -32,7 +32,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="">Categoria</label>
-                                    <select name="cat" class="form-control">
+                                    <select name="cat_id" class="form-control">
                                         @foreach ($cat as $item)
                                             <option value="{{ $item->id }}">{{ $item->name }}</option>
                                         @endforeach
@@ -71,7 +71,7 @@
                                 <div class="form-group">
                                     <label for="">Descrição anuncio
                                     </label>
-                                    <textarea name="" class="form-control" cols="30" rows="10"></textarea>
+                                    <textarea name="desc" class="form-control" cols="30" rows="10"></textarea>
                                 </div>
                             </div>
                             <div class="modal-footer">

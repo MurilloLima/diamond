@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('diamonds', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->intinger('cat_id');
+            $table->string('total');
+            $table->string('disponiveis');
+            $table->string('vendidos');
+            $table->string('tipo_anuncio');
+            $table->string('desc_anuncio');
+            $table->longText('desc');
             $table->timestamps();
         });
     }
