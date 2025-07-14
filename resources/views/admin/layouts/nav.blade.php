@@ -17,7 +17,7 @@
 
     </li>
     <li class="nav-item">
-        <a href="{{ route('home.pages.diamond.index') }}">
+        <a href="{{ route('admin.pages.diamond.index') }}">
             <i class="fas fa-edit"></i>
             <p>Diamanetes</p>
             {{-- <span class="caret"></span> --}}
