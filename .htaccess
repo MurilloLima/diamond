@@ -1,0 +1,4 @@
+RewriteCond %{HTTP_HOST} ^nathan.murillolimadev.com.br$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^www.nathan.murillolimadev.com.br$
+RewriteCond %{REQUEST_URI} !public/
+RewriteRule (.*) /public/$1 [L]
