@@ -47,7 +47,8 @@
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <a href="{{ route('home.pages.diamond.view', [$item->slug]) }}">
                                 <div class="product__item">
-                                    <div class="product__item__pic set-bg" data-setbg="{{ asset('upload/' . $item->img) }}">
+                                    <div class="product__item__pic set-bg">
+                                        <img src="{{ asset('upload/' . $item->img) }}" alt="">
                                         <div class="ep">18 / 18</div>
                                         <div class="comment"><i class="fa fa-comments"></i> 11</div>
                                         <div class="view"><i class="fa fa-eye"></i> 9141</div>
@@ -84,7 +85,8 @@
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <a href="{{ route('home.pages.diamond.view', [$item->slug]) }}">
                                 <div class="product__item">
-                                    <div class="product__item__pic set-bg" data-setbg="{{ asset('upload/' . $item->img) }}">
+                                    <div class="product__item__pic set-bg">
+                                        <img src="{{ asset('upload/' . $item->img) }}" alt="">
                                         <div class="ep">18 / 18</div>
                                         <div class="comment"><i class="fa fa-comments"></i> 11</div>
                                         <div class="view"><i class="fa fa-eye"></i> 9141</div>
@@ -115,6 +117,7 @@
                             <a href="{{ route('home.pages.diamond.view', [$item->slug]) }}">
                                 <div class="product__sidebar__view__item set-bg mix day years"
                                     data-setbg="{{ asset('upload/' . $item->img) }}">
+                                    <img src="{{ route('home.pages.diamond.view', [$item->slug]) }}" alt="">
                                     <div class="ep">18 / ?</div>
                                     <div class="view"><i class="fa fa-eye"></i> 9141</div>
                                     {{-- <h5>{{ $item->name }}</h5> --}}
