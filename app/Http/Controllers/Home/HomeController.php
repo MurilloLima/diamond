@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
+use App\Models\Categoria;
+use App\Models\Diamond;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -12,7 +14,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home.pages.index');
+        $cat = Categoria::latest()->get();
+        $data = Diamond::latest()->get();
+        $populares = Diamond::inRandomOrder()->limit(10)->get();
+        return view('home.pages.index', compact('data', 'cat', 'populares'));
     }
 
     /**
@@ -20,7 +25,8 @@ class HomeController extends Controller
      */
     public function login()
     {
-        return view('home.pages.login.index');
+        $cat = Categoria::latest()->get();
+        return view('home.pages.login.index', compact('cat'));
     }
 
     /**
@@ -28,7 +34,8 @@ class HomeController extends Controller
      */
     public function func()
     {
-        return view('home.pages.func.index');
+        $cat = Categoria::latest()->get();
+        return view('home.pages.func.index', compact('cat'));
     }
 
     /**

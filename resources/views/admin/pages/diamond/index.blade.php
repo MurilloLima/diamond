@@ -23,7 +23,8 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <form action="{{ route('admin.pages.diamond.store') }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ route('admin.pages.diamond.store') }}" method="post"
+                            enctype="multipart/form-data">
                             @csrf
                             <div class="modal-body">
                                 <div class="form-group">
@@ -134,21 +135,30 @@
                     </div>
                 </div>
                 <div class="card-list py-12">
-                    @foreach ($data as $item)
-                        <div class="item-list">
-                            <div class="info-user ms-3">
-                                <div class="username">{{ $item->name }}</div>
-                                <div class="status">{{ $item->slug }}</div>
-                            </div>
-                            <button class="btn btn-icon btn-link op-8 me-1">
-                                <i class="far fa-envelope"></i>
-                            </button>
-                            <button class="btn btn-icon btn-link btn-danger op-8">
-                                <i class="fas fa-ban"></i>
-                            </button>
-                        </div>
-                    @endforeach
 
+                    <table class="table table-striped table-striped-bg-black mt-3">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Criado</th>
+                                <th scope="col">#</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($data as $item)
+                                <tr>
+                                    <td>{{ $item->id }}</td>
+                                    <td>{{ $item->name }}</td>
+                                    <td>{{ $item->created_at }}</td>
+                                    <td>
+
+                                    </td>
+                                </tr>
+                            @endforeach
+
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

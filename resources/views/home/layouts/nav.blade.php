@@ -17,12 +17,9 @@
                                 <li class="active"><a href="{{ route('home.pages.index') }}">Home</a></li>
                                 <li><a href="">Categorias <span class="arrow_carrot-down"></span></a>
                                     <ul class="dropdown">
-                                        <li><a href="">Categories</a></li>
-                                        <li><a href="">Anime Details</a></li>
-                                        <li><a href="">Anime Watching</a></li>
-                                        <li><a href="">Blog Details</a></li>
-                                        <li><a href="">Sign Up</a></li>
-                                        <li><a href="">Login</a></li>
+                                        @foreach ($cat as $item)
+                                            <li><a href="">{{ $item->name }}</a></li>
+                                        @endforeach
                                     </ul>
                                 </li>
                                 <li><a href="">Blog</a></li>
