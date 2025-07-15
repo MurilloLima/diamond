@@ -115,9 +115,8 @@
                     <div class="filter__gallery">
                         @foreach ($random as $item)
                             <a href="{{ route('home.pages.diamond.view', [$item->slug]) }}">
-                                <div class="product__sidebar__view__item set-bg mix day years"
-                                    data-setbg="{{ asset('upload/' . $item->img) }}">
-                                    <img src="{{ route('home.pages.diamond.view', [$item->slug]) }}" alt="">
+                                <div class="product__sidebar__view__item set-bg mix day years">
+                                    <img src="{{ asset('upload/' . $item->img) }}" alt="">
                                     <div class="ep">18 / ?</div>
                                     <div class="view"><i class="fa fa-eye"></i> 9141</div>
                                     {{-- <h5>{{ $item->name }}</h5> --}}
