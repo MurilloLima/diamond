@@ -33,15 +33,7 @@
 
     @include('home.layouts.nav')
 
-    <!-- Hero Section Begin -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero__slider owl-carousel">
-                @include('home.layouts.slider')
-            </div>
-        </div>
-    </section>
-    <!-- Hero Section End -->
+
 
     <!-- Product Section Begin -->
     <section class="product spad">

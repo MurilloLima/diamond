@@ -41,9 +41,12 @@ class HomeController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function view($slug)
     {
-        //
+        $data = Diamond::where('slug', '=', $slug)->first();
+        $cat = Categoria::latest()->get();
+        $random = Diamond::inRandomOrder()->limit(5)->get();
+        return view('home.pages.diamond.view', compact('data', 'cat', 'random'));
     }
 
     /**

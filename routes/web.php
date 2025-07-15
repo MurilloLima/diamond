@@ -16,6 +16,8 @@ Route::get('/funciona', [HomeController::class, 'func'])->name('home.pages.func.
 //login
 Route::get('/home/login', [HomeController::class, 'login'])->name('home.pages.login.index');
 
+//view
+Route::get('/view/{slug}', [HomeController::class, 'view'])->name('home.pages.diamond.view');
 
 Route::get('/dashboard', function () {
     $cat = Categoria::latest()->get();
