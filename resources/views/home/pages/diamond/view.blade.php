@@ -5,18 +5,24 @@
         <div class="container">
             <div class="anime__details__content">
                 <div class="row">
-                    <div class="col-lg-4">
-                        <div class="anime__details__pic set-bg" data-setbg="{{ asset('upload/' . $data->img) }}"
+                    <div class="col-lg-5">
+                        <img src="{{ asset('upload/' . $data->img) }}" alt="" width="440">
+                        {{-- <div class="anime__details__pic set-bg" data-setbg="{{ asset('upload/' . $data->img) }}"
                             style="background-image: url({{ asset('upload/' . $data->img) }});">
-                            <div class="comment"><i class="fa fa-comments"></i> Disponiveis {{ $data->disponiveis }}</div>
-                            <div class="view"><i class="fa fa-eye"></i> Vendidos {{ $data->vendidos }}</div>
-                        </div>
+                        </div> --}}
+
                     </div>
-                    <div class="col-lg-8">
+                    <div class="col-lg-7">
                         <div class="anime__details__text">
                             <div class="anime__details__title">
                                 <h3>{{ $data->name }}</h3>
                                 {{-- <span>フェイト／ステイナイト, Feito／sutei naito</span> --}}
+                                <div class="view" style="color: #FFF; font-size: 12px">
+                                    Vendidos {{ $data->vendidos }} |
+                                    Disponiveis {{ $data->disponiveis }}
+                                </div>
+                                <div class="comment">
+                                </div>
                             </div>
 
                             <p>{{ $data->desc }}</p>
@@ -64,15 +70,16 @@
                             <h5>Você pode gostar...</h5>
                         </div>
                         @foreach ($random as $item)
-                            <a href="{{ route('home.pages.diamond.view', [$item->slug]) }}">
-                                <div class="product__sidebar__view__item set-bg"
+                            <div class="product__sidebar__view__item set-bg">
+                                <a href="{{ route('home.pages.diamond.view', [$item->slug]) }}"
                                     data-setbg="{{ asset('upload/' . $item->img) }}"
                                     style="background-image: url({{ asset('upload/' . $item->img) }});">
                                     <div class="ep">18 / ?</div>
                                     <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                                    <h5><a href="#">{{ $item->name }}</a></h5>
-                                </div>
-                            </a>
+                                    {{-- <h5><a href="#">{{ $item->name }}</a></h5> --}}
+                                </a>
+                                <img src="{{ asset('upload/' . $item->img) }}" alt="">
+                            </div>
                         @endforeach
                     </div>
                 </div>

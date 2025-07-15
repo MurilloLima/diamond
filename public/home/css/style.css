@@ -973,6 +973,13 @@ ol {
     position: relative;
 }
 
+.anime__details__pic img{
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 5px;
+    /* position: relative; */
+}
+
 .anime__details__pic .comment {
     font-size: 13px;
     color: #ffffff;

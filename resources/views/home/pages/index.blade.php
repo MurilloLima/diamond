@@ -117,7 +117,7 @@
                                     data-setbg="{{ asset('upload/' . $item->img) }}">
                                     <div class="ep">18 / ?</div>
                                     <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                                    <h5>{{ $item->name }}</h5>
+                                    {{-- <h5>{{ $item->name }}</h5> --}}
                                 </div>
                             </a>
                         @endforeach
