@@ -44,8 +44,8 @@
                 </div>
                 <div class="row">
                     @foreach ($data as $item)
-                        <a href="{{ route('home.pages.diamond.view', [$item->slug]) }}">
-                            <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <a href="{{ route('home.pages.diamond.view', [$item->slug]) }}">
                                 <div class="product__item">
                                     <div class="product__item__pic set-bg" data-setbg="{{ asset('upload/' . $item->img) }}">
                                         <div class="ep">18 / 18</div>
@@ -60,8 +60,8 @@
                                         <h5><a href="#">{{ $item->name }}</a></h5>
                                     </div>
                                 </div>
-                            </div>
-                        </a>
+                            </a>
+                        </div>
                     @endforeach
 
                 </div>
@@ -114,7 +114,7 @@
                         @foreach ($random as $item)
                             <a href="{{ route('home.pages.diamond.view', [$item->slug]) }}">
                                 <div class="product__sidebar__view__item set-bg mix day years"
-                                    data-setbg="{{ asset('upload/' . $item->slug) }}">
+                                    data-setbg="{{ asset('upload/' . $item->img) }}">
                                     <div class="ep">18 / ?</div>
                                     <div class="view"><i class="fa fa-eye"></i> 9141</div>
                                     <h5>{{ $item->name }}</h5>
@@ -128,19 +128,21 @@
                     <div class="section-title">
                         <h5>Novos comentários</h5>
                     </div>
-                    <div class="product__sidebar__comment__item">
-                        <div class="product__sidebar__comment__item__pic">
-                            <img src="{{ asset('home/img/sidebar/comment-1.jpg') }}" alt="">
+                    <a href="{{ route('home.pages.diamond.view', [$item->slug]) }}">
+                        <div class="product__sidebar__comment__item">
+                            <div class="product__sidebar__comment__item__pic">
+                                <img src="{{ asset('upload/' . $item->slug) }}" alt="">
+                            </div>
+                            <div class="product__sidebar__comment__item__text">
+                                <ul>
+                                    <li>Active</li>
+                                    <li>Movie</li>
+                                </ul>
+                                <h5><a href="#">The Seven Deadly Sins: Wrath of the Gods</a></h5>
+                                <span><i class="fa fa-eye"></i> 19.141 Viewes</span>
+                            </div>
                         </div>
-                        <div class="product__sidebar__comment__item__text">
-                            <ul>
-                                <li>Active</li>
-                                <li>Movie</li>
-                            </ul>
-                            <h5><a href="#">The Seven Deadly Sins: Wrath of the Gods</a></h5>
-                            <span><i class="fa fa-eye"></i> 19.141 Viewes</span>
-                        </div>
-                    </div>
+                    </a>
 
                 </div>
 
