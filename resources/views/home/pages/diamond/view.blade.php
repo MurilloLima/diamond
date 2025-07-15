@@ -5,14 +5,14 @@
         <div class="container">
             <div class="anime__details__content">
                 <div class="row">
-                    <div class="col-lg-3">
+                    <div class="col-lg-4">
                         <div class="anime__details__pic set-bg" data-setbg="{{ asset('upload/' . $data->img) }}"
                             style="background-image: url({{ asset('upload/' . $data->img) }});">
                             <div class="comment"><i class="fa fa-comments"></i> Disponiveis {{ $data->disponiveis }}</div>
                             <div class="view"><i class="fa fa-eye"></i> Vendidos {{ $data->vendidos }}</div>
                         </div>
                     </div>
-                    <div class="col-lg-9">
+                    <div class="col-lg-8">
                         <div class="anime__details__text">
                             <div class="anime__details__title">
                                 <h3>{{ $data->name }}</h3>
@@ -64,12 +64,15 @@
                             <h5>Você pode gostar...</h5>
                         </div>
                         @foreach ($random as $item)
-                            <div class="product__sidebar__view__item set-bg" data-setbg="{{ asset('upload/'.$item->img) }}"
-                                style="background-image: url({{ asset('upload/'.$item->img) }});">
-                                <div class="ep">18 / ?</div>
-                                <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                                <h5><a href="#">{{ $item->name }}</a></h5>
-                            </div>
+                            <a href="{{ route('home.pages.diamond.view', [$item->slug]) }}">
+                                <div class="product__sidebar__view__item set-bg"
+                                    data-setbg="{{ asset('upload/' . $item->img) }}"
+                                    style="background-image: url({{ asset('upload/' . $item->img) }});">
+                                    <div class="ep">18 / ?</div>
+                                    <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                                    <h5><a href="#">{{ $item->name }}</a></h5>
+                                </div>
+                            </a>
                         @endforeach
                     </div>
                 </div>

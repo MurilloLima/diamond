@@ -17,7 +17,9 @@ class HomeController extends Controller
         $cat = Categoria::latest()->get();
         $data = Diamond::latest()->get();
         $populares = Diamond::inRandomOrder()->limit(10)->get();
-        return view('home.pages.index', compact('data', 'cat', 'populares'));
+        $random = Diamond::inRandomOrder()->limit(5)->get();
+
+        return view('home.pages.index', compact('data', 'cat', 'populares', 'random'));
     }
 
     /**
