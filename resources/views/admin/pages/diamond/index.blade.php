@@ -23,9 +23,14 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <form action="{{ route('admin.pages.diamond.store') }}" method="post">
+                        <form action="{{ route('admin.pages.diamond.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="customFile">Imagem</label>
+                                    <input type="file" class="form-control" name="img">
+                                </div>
+
                                 <div class="form-group">
                                     <label for="">Nome</label>
                                     <input type="text" name="name" class="form-control">
@@ -84,7 +89,29 @@
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-md-12">
+            @if ($errors->any())
+                <div class="alert alert-danger text-center" style="margin: 10px;">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li style="text-align: center">{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+            @if (session('msg'))
+                <div class="row text-center">
+                    <div class="col-md-12">
+                        <div class="alert alert-success text-center" style="margin: 10px;">
+                            {{ session('msg') }}
+                        </div>
+                    </div>
+                </div>
+            @endif
 
+        </div>
+    </div>
     <div class="col-md-12">
         <div class="card card-round">
             <div class="card-body">

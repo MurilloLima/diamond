@@ -14,7 +14,9 @@ return new class extends Migration
         Schema::create('diamonds', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->intinger('cat_id');
+            $table->string('img');
+            $table->string('slug');
+            $table->integer('cat_id');
             $table->string('total');
             $table->string('disponiveis');
             $table->string('vendidos');
