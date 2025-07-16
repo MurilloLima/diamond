@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('tipo_anuncio');
             $table->string('desc_anuncio');
             $table->longText('desc');
+            $table->decimal('valor', 12,2);
             $table->timestamps();
         });
     }

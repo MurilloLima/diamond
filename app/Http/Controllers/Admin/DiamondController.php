@@ -49,6 +49,7 @@ class DiamondController extends Controller
             'tipo_anuncio' => 'required',
             'desc_anuncio' => 'required',
             'desc' => 'required',
+            'valor' => 'required',
         ]);
 
         if ($request->hasFile('img') && $request->file('img')->isValid()) {
@@ -75,6 +76,7 @@ class DiamondController extends Controller
             $this->diamond->desc_anuncio = $request->desc_anuncio;
             $this->diamond->desc = $request->desc;
             $this->diamond->total = $request->total;
+            $this->diamond->valor = $request->valor;
             $this->diamond->save();
             return redirect()->back()->with('msg', 'Cadastrado com sucesso!');
         }

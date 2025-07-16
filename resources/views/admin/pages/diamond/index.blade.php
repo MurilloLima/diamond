@@ -79,6 +79,10 @@
                                     </label>
                                     <textarea name="desc" class="form-control" cols="30" rows="10"></textarea>
                                 </div>
+                                <div class="form-group">
+                                    <label for="">Valor</label>
+                                    <input type="text" name="valor" class="form-control">
+                                </div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
