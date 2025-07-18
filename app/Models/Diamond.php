@@ -21,4 +21,10 @@ class Diamond extends Model
         'desc_anuncio',
         'desc'
     ];
+
+     public function categoria()
+    {
+        return $this->belongsTo(Categoria::class, 'cat_id', 'id');
+    }
+
 }

@@ -13,4 +13,9 @@ class Categoria extends Model
         'name',
         'slug',
     ];
+
+      public function diamond()
+    {
+        return $this->belongsTo(Diamond::class, 'id_diamond');
+    }
 }
