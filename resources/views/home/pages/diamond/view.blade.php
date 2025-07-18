@@ -42,25 +42,57 @@
                         <div class="section-title">
                             <h5>PERGUNTAS</h5>
                         </div>
-                        <div class="anime__review__item">
-                            <div class="anime__review__item__pic">
-                                <img src="{{ asset('home/img/anime/review-1.jpg') }}" alt="">
+                        @foreach ($sms as $item)
+                            <div class="anime__review__item">
+                                <div class="anime__review__item__pic">
+                                    <img src="{{ asset('home/img/anime/review-1.jpg') }}" alt="">
+                                </div>
+                                <div class="anime__review__item__text">
+                                    <h6>{{ $item->name }} - <span>{{ $item->created_at }}</span></h6>
+                                    <p>{{ $item->sms }}</p>
+                                </div>
                             </div>
-                            <div class="anime__review__item__text">
-                                <h6>Chris Curry - <span>1 Hour ago</span></h6>
-                                <p>whachikan Just noticed that someone categorized this as belonging to the genre
-                                    "demons" LOL</p>
-                            </div>
-                        </div>
+                        @endforeach
+
 
                     </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            @if ($errors->any())
+                                <div class="alert alert-danger text-center" style="margin: 10px;">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li style="text-align: center">{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+                            @if (session('msg'))
+                                <div class="row text-center">
+                                    <div class="col-md-12">
+                                        <div class="alert alert-success text-center" style="margin: 10px;">
+                                            {{ session('msg') }}
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
+
+                        </div>
+                    </div>
+
                     <div class="anime__details__form">
                         <div class="section-title">
                             <h5>Deixe a sua pergunta</h5>
                         </div>
-                        <form action="#">
-                            <textarea placeholder="Sua pergunta"></textarea>
-                            <button type="submit"><i class="fa fa-location-arrow"></i> Review</button>
+                        <form action="{{ route('home.pages.sms.store') }}" method="POST">
+                            @csrf
+                            <input type="text" name="name" placeholder="Nome" class="form-control"> <br>
+                            <input type="hidden" name="id_diamond" value="{{ $data->id }}">
+                            <textarea name="sms" placeholder="Sua pergunta">
+
+                            </textarea>
+                            <button type="submit"><i class="fa fa-location-arrow"></i> Enviar</button>
                         </form>
                     </div>
                 </div>

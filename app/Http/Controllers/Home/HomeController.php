@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Home;
 use App\Http\Controllers\Controller;
 use App\Models\Categoria;
 use App\Models\Diamond;
+use App\Models\Sms;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -18,8 +19,8 @@ class HomeController extends Controller
         $data = Diamond::latest()->get();
         $populares = Diamond::inRandomOrder()->limit(10)->get();
         $random = Diamond::inRandomOrder()->limit(5)->get();
-
-        return view('home.pages.index', compact('data', 'cat', 'populares', 'random'));
+        $sms = Sms::latest()->limit(4)->get();
+        return view('home.pages.index', compact('data', 'cat', 'populares', 'random', 'sms'));
     }
 
     /**
@@ -48,7 +49,8 @@ class HomeController extends Controller
         $data = Diamond::where('slug', '=', $slug)->first();
         $cat = Categoria::latest()->get();
         $random = Diamond::inRandomOrder()->limit(5)->get();
-        return view('home.pages.diamond.view', compact('data', 'cat', 'random'));
+        $sms = Sms::latest()->get();
+        return view('home.pages.diamond.view', compact('data','sms', 'cat', 'random'));
     }
 
     /**

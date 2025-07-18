@@ -3,6 +3,7 @@
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\Admin\DiamondController;
 use App\Http\Controllers\Home\HomeController;
+use App\Http\Controllers\Home\SmsController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Categoria;
 use App\Models\Diamond;
@@ -18,6 +19,9 @@ Route::get('/home/login', [HomeController::class, 'login'])->name('home.pages.lo
 
 //view
 Route::get('/view/{slug}', [HomeController::class, 'view'])->name('home.pages.diamond.view');
+
+//sms
+Route::post('/sms/store', [SmsController::class, 'store'])->name('home.pages.sms.store');
 
 Route::get('/dashboard', function () {
     $cat = Categoria::latest()->get();
