@@ -39,6 +39,13 @@
 
     <!-- CSS Just for demo purpose, don't include it in your project -->
     {{-- <link rel="stylesheet" href="{{ asset('admin/css/demo.css') }}" /> --}}
+
+    <script src=" {{ asset('admin/tinymce/tinymce.min.js') }}" referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+            selector: '#mytextarea'
+        });
+    </script>
 </head>
 
 <body>

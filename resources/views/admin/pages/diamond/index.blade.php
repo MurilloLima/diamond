@@ -77,7 +77,7 @@
                                 <div class="form-group">
                                     <label for="">Descrição anuncio
                                     </label>
-                                    <textarea name="desc" class="form-control" cols="30" rows="10"></textarea>
+                                    <textarea name="desc" id="mytextarea" class="form-control" cols="30" rows="10"></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="">Valor</label>
