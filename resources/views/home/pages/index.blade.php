@@ -50,7 +50,7 @@
                                     <div class="product__item__pic set-bg">
                                         <img src="{{ asset('upload/' . $item->img) }}" alt="">
                                         <div class="ep">{{ $item->valor }}</div>
-                                        <div class="comment"><i class="fa fa-comments"></i> 11</div>
+                                        <div class="comment"><i class="fa fa-comments"></i> {{ count($item->comments) }}</div>
                                         <div class="view"><i class="fa fa-eye"></i> 9141</div>
                                     </div>
                                     <div class="product__item__text">
@@ -88,7 +88,7 @@
                                     <div class="product__item__pic set-bg">
                                         <img src="{{ asset('upload/' . $item->img) }}" alt="">
                                         <div class="ep">{{ $item->valor }}</div>
-                                        <div class="comment"><i class="fa fa-comments"></i> 11</div>
+                                        <div class="comment"><i class="fa fa-comments"></i> {{ count($item->comments) }}</div>
                                         <div class="view"><i class="fa fa-eye"></i> 9141</div>
                                     </div>
                                 </div>
