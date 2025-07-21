@@ -26,7 +26,7 @@
                             </div>
 
                             <p>{{ $data->desc }}</p>
-
+                            <span style="color: #FFF; font-size: 11px">Criado em: {{ $data->created_at }}</span>
                             <div class="anime__details__btn">
                                 <a href="#" class="follow-btn"><i class="fa fa-heart-o"></i> ENTREGA AUTOMÁTICA</a>
                                 <a href="#" class="watch-btn"><span>COMPRAR</span> <i
@@ -50,6 +50,7 @@
                                 <div class="anime__review__item__text">
                                     <h6>{{ $item->name }} - <span>{{ $item->created_at }}</span></h6>
                                     <p>{{ $item->sms }}</p>
+
                                 </div>
                             </div>
                         @endforeach

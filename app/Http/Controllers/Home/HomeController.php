@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Categoria;
 use App\Models\Diamond;
 use App\Models\Sms;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -20,6 +21,7 @@ class HomeController extends Controller
         $populares = Diamond::inRandomOrder()->limit(10)->get();
         $random = Diamond::inRandomOrder()->limit(5)->get();
         $sms = Sms::latest()->limit(4)->get();
+
         return view('home.pages.index', compact('data', 'cat', 'populares', 'random', 'sms'));
     }
 
