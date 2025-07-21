@@ -24,7 +24,7 @@
                                 <div class="comment">
                                 </div>
                             </div>
-                            <p>{{ $data->desc }}</p>
+                            <p>{!! $data->desc !!}</p>
 
                             <span style="color: #FFF; font-size: 11px">Criado em: {{ $data->created_at }}</span>
 
@@ -104,16 +104,14 @@
                             <h5>Você pode gostar...</h5>
                         </div>
                         @foreach ($random as $item)
-                            <div class="product__sidebar__view__item set-bg">
-                                <a href="{{ route('home.pages.diamond.view', [$item->slug]) }}"
-                                    data-setbg="{{ asset('upload/' . $item->img) }}"
-                                    style="background-image: url({{ asset('upload/' . $item->img) }});">
+                            <a href="{{ route('home.pages.diamond.view', [$item->slug]) }}">
+                                <div class="product__sidebar__view__item set-bg">
                                     <div class="ep">18 / ?</div>
                                     <div class="view"><i class="fa fa-eye"></i> 9141</div>
                                     {{-- <h5><a href="#">{{ $item->name }}</a></h5> --}}
-                                </a>
-                                <img src="{{ asset('upload/' . $item->img) }}" alt="">
-                            </div>
+                                    <img src="{{ asset('upload/' . $item->img) }}" alt="">
+                                </div>
+                            </a>
                         @endforeach
                     </div>
                 </div>
