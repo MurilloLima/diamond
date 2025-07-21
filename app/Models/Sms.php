@@ -14,4 +14,10 @@ class Sms extends Model
         'id_diamond',
         'sms',
     ];
+
+    public function diamond()
+    {
+        return $this->belongsTo(Diamond::class, 'id_diamond', 'id');
+    }
+
 }

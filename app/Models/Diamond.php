@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Diamond extends Model
 {
@@ -22,9 +23,13 @@ class Diamond extends Model
         'desc'
     ];
 
-     public function categoria()
+    public function categoria()
     {
         return $this->belongsTo(Categoria::class, 'cat_id', 'id');
     }
 
+    public function comments(): HasMany
+    {
+        return $this->hasMany(Sms::class, 'id_diamond');
+    }
 }

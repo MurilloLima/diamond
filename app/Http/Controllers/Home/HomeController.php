@@ -49,8 +49,8 @@ class HomeController extends Controller
         $data = Diamond::where('slug', '=', $slug)->first();
         $cat = Categoria::latest()->get();
         $random = Diamond::inRandomOrder()->limit(5)->get();
-        $sms = Sms::latest()->get();
-        return view('home.pages.diamond.view', compact('data','sms', 'cat', 'random'));
+
+        return view('home.pages.diamond.view', compact('data', 'cat', 'random'));
     }
 
     /**
