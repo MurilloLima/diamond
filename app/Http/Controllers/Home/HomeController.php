@@ -6,11 +6,16 @@ use App\Http\Controllers\Controller;
 use App\Models\Categoria;
 use App\Models\Diamond;
 use App\Models\Sms;
-use Carbon\Carbon;
+use App\Models\view;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+    private $view;
+    public function __construct(view $view)
+    {
+        $this->view = $view;
+    }
     /**
      * Display a listing of the resource.
      */
@@ -51,6 +56,16 @@ class HomeController extends Controller
         $data = Diamond::where('slug', '=', $slug)->first();
         $cat = Categoria::latest()->get();
         $random = Diamond::inRandomOrder()->limit(5)->get();
+
+        if ($data->id === NULL) {
+            $this->view->id_diamond = $data->id;
+            $this->view->total = +1;
+            $this->view->save();
+        } else {
+            $this->view->id_diamond = $data->id;
+            $this->view->total = +1;
+            $this->view->save();
+        }
 
         return view('home.pages.diamond.view', compact('data', 'cat', 'random'));
     }

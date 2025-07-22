@@ -51,7 +51,7 @@
                                         <img src="{{ asset('upload/' . $item->img) }}" alt="">
                                         <div class="ep">{{ $item->valor }}</div>
                                         <div class="comment"><i class="fa fa-comments"></i> {{ count($item->comments) }}</div>
-                                        <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                                        <div class="view"><i class="fa fa-eye"></i> {{ count($item->views) }}</div>
                                     </div>
                                     <div class="product__item__text">
                                         <ul>
@@ -89,7 +89,7 @@
                                         <img src="{{ asset('upload/' . $item->img) }}" alt="">
                                         <div class="ep">{{ $item->valor }}</div>
                                         <div class="comment"><i class="fa fa-comments"></i> {{ count($item->comments) }}</div>
-                                        <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                                        <div class="view"><i class="fa fa-eye"></i> {{ count($item->views) }}</div>
                                     </div>
                                 </div>
                             </a>
@@ -118,7 +118,7 @@
                                 <div class="product__sidebar__view__item set-bg mix day years">
                                     <img src="{{ asset('upload/' . $item->img) }}" alt="">
                                     <div class="ep">{{ $item->valor }}</div>
-                                    <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                                    <div class="view"><i class="fa fa-eye"></i> {{ count($item->views) }}</div>
                                     {{-- <h5>{{ $item->name }}</h5> --}}
                                 </div>
                             </a>

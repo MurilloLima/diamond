@@ -32,4 +32,9 @@ class Diamond extends Model
     {
         return $this->hasMany(Sms::class, 'id_diamond');
     }
+
+    public function views()
+    {
+        return $this->hasMany(view::class, 'id_diamond', 'id');
+    }
 }

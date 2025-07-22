@@ -3,10 +3,18 @@
 namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
+use App\Models\Diamond;
+use App\Models\view;
 use Illuminate\Http\Request;
 
 class DiamondController extends Controller
 {
+    private $view;
+    public function __construct(view $view)
+    {
+        $this->view = $view;
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -18,9 +26,18 @@ class DiamondController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create($slug)
     {
-        //
+        $data = Diamond::where('slug', '=', $slug)->first();
+        if ($data->id === NULL) {
+            $this->view->id_diamond = $data->id;
+            $this->view->total = +1;
+            $this->view->save();
+        } else {
+            $this->view->noticia_id = $data->id;
+            $this->view->total = +1;
+            $this->view->save();
+        }
     }
 
     /**
