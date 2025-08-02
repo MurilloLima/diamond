@@ -94,28 +94,25 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-12">
-            @if ($errors->any())
-                <div class="alert alert-danger text-center" style="margin: 10px;">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li style="text-align: center">{{ $error }}</li>
-                        @endforeach
-                    </ul>
+    <div class="col-md-12">
+        @if ($errors->any())
+            <div class="card card-round" style="background-color: orangered">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li style="margin: 10px; text-align: center">{{ $error }}</li>
+                    @endforeach
+                </ul>
+        @endif
+    </div>
+    @if (session('msg'))
+        <div class="card card-round" style="background-color: yellowgreen">
+            <div class="col-md-12">
+                <div class="text-center" style="margin: 10px;">
+                    {{ session('msg') }}
                 </div>
-            @endif
-            @if (session('msg'))
-                <div class="row text-center">
-                    <div class="col-md-12">
-                        <div class="alert alert-success text-center" style="margin: 10px;">
-                            {{ session('msg') }}
-                        </div>
-                    </div>
-                </div>
-            @endif
-
+            </div>
         </div>
+    @endif
     </div>
     <div class="col-md-12">
         <div class="card card-round">
@@ -156,7 +153,9 @@
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $item->created_at }}</td>
                                     <td>
-
+                                        <a href="{{ route('admin.pages.diamond.destroy', [$item->id]) }}">
+                                           Deletar
+                                        </a>
                                     </td>
                                 </tr>
                             @endforeach

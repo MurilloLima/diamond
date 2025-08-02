@@ -109,8 +109,9 @@ class DiamondController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Request $request)
     {
-        //
+        Diamond::destroy($request->id);
+        return redirect()->back()->with('msg', 'Deletado com sucesso!');
     }
 }

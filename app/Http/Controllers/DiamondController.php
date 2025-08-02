@@ -58,8 +58,8 @@ class DiamondController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Diamond $diamond)
+    public function destroy(Request $request)
     {
-        //
+
     }
 }

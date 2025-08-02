@@ -88,7 +88,9 @@
                                 <td>{{ $item->name }}</td>
                                 <td>{{ $item->created_at }}</td>
                                 <td>
-
+                                    <a href="{{ route('admin.pages.categoria.destroy', [$item->id]) }}">
+                                        Deletar
+                                    </a>
                                 </td>
                             </tr>
                         @endforeach

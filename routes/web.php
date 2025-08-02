@@ -38,11 +38,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/categoria', [CategoriaController::class, 'index'])->name('admin.categoria.index');
     Route::post('/admin/categoria/store', [CategoriaController::class, 'store'])->name('admin.categoria.store');
     Route::delete('/admin/categoria', [CategoriaController::class, 'destroy'])->name('admin.categoria.destroy');
+    Route::get('admin/categoria/delete/{id}', [CategoriaController::class, 'destroy'])->name('admin.pages.categoria.destroy');
 
     //diamond
-    Route::get('/diamond', [DiamondController::class, 'index'])->name('admin.pages.diamond.index');
-    Route::post('/diamond/store', [DiamondController::class, 'store'])->name('admin.pages.diamond.store');
-    Route::get('/diamond/view/{slug}', [DiamondController::class, 'view'])->name('admin.pages.diamond.view');
+    Route::get('admin/diamond', [DiamondController::class, 'index'])->name('admin.pages.diamond.index');
+    Route::post('admin/diamond/store', [DiamondController::class, 'store'])->name('admin.pages.diamond.store');
+    Route::get('admin/diamond/view/{slug}', [DiamondController::class, 'view'])->name('admin.pages.diamond.view');
+    Route::get('admin/diamond/delete/{id}', [DiamondController::class, 'destroy'])->name('admin.pages.diamond.destroy');
+
 });
 
 require __DIR__ . '/auth.php';

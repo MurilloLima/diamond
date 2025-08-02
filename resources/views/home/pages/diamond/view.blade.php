@@ -107,7 +107,9 @@
                             <a href="{{ route('home.pages.diamond.view', [$item->slug]) }}">
                                 <div class="product__sidebar__view__item set-bg">
                                     <div class="ep">{{ $item->valor }}</div>
-                                    <div class="view"><i class="fa fa-eye"></i> {{ count($item->views) }}</div>
+                                    <div class="view">
+                                        <i class="fa fa-eye"></i> {{ count($item->views) }}
+                                    </div>
                                     {{-- <h5><a href="#">{{ $item->name }}</a></h5> --}}
                                     <img src="{{ asset('upload/' . $item->img) }}" alt="">
                                 </div>

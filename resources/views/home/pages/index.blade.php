@@ -114,7 +114,7 @@
                     </ul>
                     <div class="filter__gallery">
                         @foreach ($random as $item)
-                            <a href="{{ route('home.pages.diamond.view', [$item->slug]) }}">
+                            <a href="{{ route('home.pages.diamond.view', [$item->slug ?? '']) }}">
                                 <div class="product__sidebar__view__item set-bg mix day years">
                                     <img src="{{ asset('upload/' . $item->img) }}" alt="">
                                     <div class="ep">{{ $item->valor }}</div>
@@ -130,7 +130,7 @@
                     <div class="section-title">
                         <h5>Novos comentários</h5>
                     </div>
-                    <a href="{{ route('home.pages.diamond.view', [$item->slug]) }}">
+                    <a href="{{ route('home.pages.diamond.view', [$item->slug ?? '']) }}">
                         @foreach ($sms as $item)
                             <div class="product__sidebar__comment__item">
                                 <div class="product__sidebar__comment__item__pic">

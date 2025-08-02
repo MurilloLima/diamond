@@ -72,8 +72,9 @@ class CategoriaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Categoria $categoria)
+    public function destroy(Request $request)
     {
-        //
+        Categoria::destroy($request->id);
+        return redirect()->back()->with('msg', 'Deletado com sucesso!');
     }
 }
